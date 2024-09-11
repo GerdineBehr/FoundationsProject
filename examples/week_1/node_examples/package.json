@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "examples demonstrating node projects",
   "main": "app.js",
+<<<<<<< HEAD
   "type":"module",
+=======
+>>>>>>> e807901 (node project first creation)
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const commonJsImports = require("./commonjs")
 // const { printName, person } = require("./commonjs")
 
@@ -13,3 +14,6 @@ import * as module_example from "./module.js";
 
 module_example.printRole();
 console.log(developer);
+=======
+console.log("Hello!");
+>>>>>>> e807901 (node project first creation)
