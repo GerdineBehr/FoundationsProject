@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to 1822 Serverless NERD (Node.js, Express.js, React, DynamoDB)!
 
 This is the training repository for the Serverless NERD cohort starting on September 9th, 2024. All of the notes, demos, study guides, project guidelines, and other resources will be found here.
@@ -21,3 +22,7 @@ The rest of the technologies will be covered during training.
 
 - [Git Cheat Sheet](https://i.redd.it/8341g68g1v7y.png)
 - [Mozilla JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/javascript)
+=======
+# FoundationsProject
+Ticketing System App 
+>>>>>>> b16bfa1 (Initial commit)
