@@ -1,7 +1,7 @@
 const http = require('http');
 const { createLogger, transports, format } = require('winston');
 require('dotenv').config();
-
+require(object); 
 
 
 
@@ -19,7 +19,7 @@ const logger = createLogger({
 
 // Setup Database 
 const { DynamoDBClient, QueryCommand, ScanCommand } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand, UpdateCommand } = require("@aws-sdk/lib-dynamodb");
+const { DynamoDBDocumentClient, GetCommand, PutCommand, UpdateCommand, DeleteCommand } = require("@aws-sdk/lib-dynamodb");
 
 // Create a DynamoDB client
 const dynamoDbClient = new DynamoDBClient({
@@ -32,36 +32,16 @@ const dynamoDbClient = new DynamoDBClient({
 
 const documentClient = DynamoDBDocumentClient.from(dynamoDbClient);
 
-const TableName = "[*INSERT TABLE NAME HERE*]";
+const TableName = "AccountData";
 
+//set up commands
 
-// Helper function to send a JSON response
-const sendJSONResponse = (res, statusCode, data) => {
-    res.statusCode = statusCode;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(data));
-};
+async function postUser(Account){
+    const command = new PutCommand({
 
-
-switch(req.method) {
-    case 'POST': //Post-Create new Username and password **User 
-        break;
-    case 'POST': //Post-Create new Username and password **Admin
-        break;
-    case 'POST':
-        break;
-    default:
-
+    })
 }
 
-
-/*
-Reimbursement info:
--Amount
--Description
--Status
--Employee ID 
- 
  
  
  // USER FACING 
