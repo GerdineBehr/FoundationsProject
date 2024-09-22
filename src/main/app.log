@@ -1,1 +1,16 @@
 2024-09-21T19:59:27.181Z [info]: Server is listening on port: 3000
+2024-09-21T21:09:27.045Z [info]: Server is listening on port: 3000
+2024-09-21T21:35:49.511Z [info]: Server is listening on port: 3000
+2024-09-21T21:35:53.681Z [info]:  Incoming DELETE : /items
+2024-09-21T21:35:59.623Z [info]:  Incoming GET : /items
+2024-09-21T21:36:27.876Z [info]:  Incoming GET : /items
+2024-09-21T21:36:32.845Z [info]:  Incoming GET : /items
+2024-09-21T21:36:40.007Z [info]:  Incoming GET : /items
+2024-09-21T21:37:11.425Z [info]:  Incoming GET : /refundRequests
+2024-09-21T21:39:02.712Z [info]:  Incoming GET : /refundRequests
+2024-09-21T21:40:28.069Z [info]: Server is listening on port: 3000
+2024-09-21T21:40:32.103Z [info]:  Incoming GET : /refundRequests
+2024-09-21T21:40:40.541Z [info]:  Incoming GET : /refundRequests
+2024-09-21T21:40:45.131Z [info]:  Incoming GET : /refundRequests
+2024-09-22T00:30:33.508Z [info]: Server is listening on port: 3000
+2024-09-22T00:30:37.742Z [info]:  Incoming GET : /refundRequests
