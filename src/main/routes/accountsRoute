@@ -8,10 +8,9 @@ router.get("/", (req, res) => {
 })
 
 function validateAccountMiddleware(req, res, next){
-    //Check if there is a valid name and price
+    //Check if there is a valid username and password
     let jsonBody = req.body; 
     if(validateAccountMiddleware(jsonBody)){
-            console.log("ValidEntry"); //added by me
         next();
     }else{
         res.status(400).json({
