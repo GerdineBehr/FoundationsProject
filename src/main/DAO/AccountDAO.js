@@ -21,6 +21,9 @@ const logger = createLogger({
 const { DynamoDBClient, QueryCommand, ScanCommand } = require("@aws-sdk/client-dynamodb");
 const { DynamoDBDocumentClient, GetCommand, PutCommand, UpdateCommand, DeleteCommand } = require("@aws-sdk/lib-dynamodb");
 
+console.log("AWS_REGION: ", process.env.AWS_REGION);
+
+
 // Create a DynamoDB client
 const dynamoDbClient = new DynamoDBClient({
     region: process.env.AWS_REGION,
@@ -29,6 +32,7 @@ const dynamoDbClient = new DynamoDBClient({
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     }
 });
+
 
 const documentClient = DynamoDBDocumentClient.from(dynamoDbClient);
 

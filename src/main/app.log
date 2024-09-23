@@ -61,3 +61,35 @@
 2024-09-23T03:47:07.931Z [info]: Server is listening on port: 3000
 2024-09-23T03:47:12.193Z [info]:  Incoming POST : /Accounts
 2024-09-23T03:47:12.326Z [error]: Region is missing
+2024-09-23T13:32:14.435Z [info]: Server is listening on port: 3000
+2024-09-23T13:32:21.906Z [info]:  Incoming POST : /Accounts
+2024-09-23T13:32:21.941Z [error]: Region is missing
+2024-09-23T13:39:35.040Z [info]: Server is listening on port: 3000
+2024-09-23T13:39:39.918Z [info]:  Incoming POST : /Accounts
+2024-09-23T13:39:39.960Z [error]: Region is missing
+2024-09-23T13:43:43.598Z [info]: Server is listening on port: 3000
+2024-09-23T13:43:50.918Z [info]:  Incoming POST : /Accounts
+2024-09-23T13:43:50.963Z [error]: Region is missing
+2024-09-23T13:44:53.298Z [info]: Server is listening on port: 3000
+2024-09-23T13:44:55.845Z [info]:  Incoming POST : /Accounts
+2024-09-23T13:44:55.884Z [error]: Region is missing
+2024-09-23T13:47:37.607Z [info]: Server is listening on port: 3000
+2024-09-23T13:48:50.070Z [info]: Server is listening on port: 3000
+2024-09-23T13:48:58.456Z [info]:  Incoming POST : /Accounts
+2024-09-23T13:48:58.485Z [info]: Incoming POST : /Accounts
+2024-09-23T13:48:58.772Z [error]: One or more parameter values were invalid: Missing the key Account ID in the item
+2024-09-23T14:06:36.723Z [info]: Server is listening on port: 3000
+2024-09-23T14:06:37.976Z [info]:  Incoming POST : /Accounts
+2024-09-23T14:06:38.012Z [info]: Incoming POST : /Accounts
+2024-09-23T14:06:38.240Z [error]: One or more parameter values were invalid: Missing the key AccountID  in the item
+2024-09-23T14:24:14.702Z [info]: Server is listening on port: 3000
+2024-09-23T14:24:20.723Z [info]:  Incoming POST : /Accounts
+2024-09-23T14:24:20.755Z [info]: Incoming POST : /Accounts
+2024-09-23T14:24:21.034Z [error]: One or more parameter values were invalid: Missing the key AccountID  in the item
+2024-09-23T14:27:35.369Z [info]: Server is listening on port: 3000
+2024-09-23T14:27:42.512Z [info]:  Incoming POST : /Accounts
+2024-09-23T14:27:42.543Z [info]: Incoming POST : /Accounts
+2024-09-23T14:27:42.799Z [error]: One or more parameter values were invalid: Missing the key AccountID  in the item
+2024-09-23T14:45:28.565Z [info]: Server is listening on port: 3000
+2024-09-23T14:45:32.143Z [info]:  Incoming POST : /Accounts
+2024-09-23T14:45:32.173Z [info]: Incoming POST : /Accounts
