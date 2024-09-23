@@ -14,7 +14,7 @@ async function postAccount(account){
 }; 
 
 function validateAccount(account){
-    return (account.accountID && account.userName); // boolean && operator will return false if either are false 
+    return (account.Password && account.Username); // boolean && operator will return false if either are false 
 
 }
 

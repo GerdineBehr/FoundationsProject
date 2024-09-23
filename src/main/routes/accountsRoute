@@ -1,0 +1,24 @@
+const express = require('express');
+const router = express.Router();
+
+// http//localhost:3000/accounts
+
+router.get("/", (req, res) => {
+    res.send("This is the root account route "); 
+})
+
+function validateAccountMiddleware(req, res, next){
+    //Check if there is a valid name and price
+    let jsonBody = req.body; 
+    if(validateAccountMiddleware(jsonBody)){
+            console.log("ValidEntry"); //added by me
+        next();
+    }else{
+        res.status(400).json({
+            message: "Invalid Entry"
+        })
+    }
+}
+
+module.exports = router; 
+

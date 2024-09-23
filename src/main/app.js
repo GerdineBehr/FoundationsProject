@@ -1,6 +1,9 @@
 const express = require('express');
 const logger = require('./util/logger');
-const refundRequestsRouter = require('./routes/refundRequestsRoute'); // http//localhost:3000/refundRequests
+const refundRequestRouter = require('./routes/refundRequestRoute'); // http//localhost:3000/refundRequests
+//const refundRequestRouter = require("./Controller/RefundRequestRouter");
+const accountRouter = require("./Controller/AccountRouter");
+//const accountRouter = require('./routes/accountRoute');
 
 
 const app = express();
@@ -31,10 +34,20 @@ app.use(loggerMiddleware); //Body parser middleware
 
 app.use(express.json()); //Parses incoming and outgoin JSON request for you 
 
-app.use("./refundRequest", refundRequestsRouter); // lets you parse URL encoded form data
+//MISSING  // lets you parse URL encoded form data
 
-app.use("/refundRequests" , refundRequestsRouter); // refundRequests endpoint is expected 
+app.use("/refundRequest", refundRequestRouter); // refundRequests endpoint is expected 
 
+//set up logger 
+app.use((req, res, next) =>{
+    logger.info(`Incoming ${req.method} : ${req.url}`);
+    next();
+});
+
+//use the router
+app.use("/accounts", accountRouter);
+
+app.use("/refundRequest", refundRequestRouter);
 
 
 app.listen(PORT, () =>{

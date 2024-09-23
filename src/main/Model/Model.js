@@ -12,7 +12,7 @@ class Account{ //Creating Account class to encapsulate and organize database int
        // Will model with Class transformer
     }
 
-    account = new Account();
+    // account = new Account();
 
     
 
@@ -46,4 +46,4 @@ class Request{ //Creating Account class to encapsulate and organize database int
 
 
 
-module.exports = {account} ; 
+// module.exports = {account} ; 

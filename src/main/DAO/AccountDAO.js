@@ -3,7 +3,7 @@ const { createLogger, transports, format } = require('winston');
 require('dotenv').config();
 const {account} = require('../Model/Model.js'); 
 
-const accountTest = new account; //JUST A TEST, DELETE AFTER
+// const accountTest = new account; //JUST A TEST, DELETE AFTER
 
 const logger = createLogger({
     level: 'info',
@@ -36,34 +36,37 @@ const TableName = "AccountData";
 
 //set up commands
 
-async function postUser(Account){
+async function postAccount(account){
     const command = new PutCommand({
         TableName, 
-        Account
+        Item: account
     });
     try{
         const data = await documentClient.send(command);
+        return data;
 
     } catch (err){
         logger.error(err);
+        throw err;
     }
 }
 
-async function getUser(){
+async function getAccount(){
     const command = new ScanCommand({
-        TebleName, 
+        TableName, 
     });
     try{
         const data = await documentClient.send(command);
         return data.Account;
     } catch(err){
     logger.error(err);
+    throw err;
     }
 }
 
 module.exports = { 
-    getUser, 
-    postUser
+    getAccount, 
+    postAccount
 }
  
  
