@@ -1,9 +1,9 @@
 const http = require('http');
 const { createLogger, transports, format } = require('winston');
 require('dotenv').config();
-require(object); 
+const {account} = require('../Model/Model.js'); 
 
-
+const accountTest = new account; //JUST A TEST, DELETE AFTER
 
 const logger = createLogger({
     level: 'info',
@@ -38,10 +38,33 @@ const TableName = "AccountData";
 
 async function postUser(Account){
     const command = new PutCommand({
+        TableName, 
+        Account
+    });
+    try{
+        const data = await documentClient.send(command);
 
-    })
+    } catch (err){
+        logger.error(err);
+    }
 }
 
+async function getUser(){
+    const command = new ScanCommand({
+        TebleName, 
+    });
+    try{
+        const data = await documentClient.send(command);
+        return data.Account;
+    } catch(err){
+    logger.error(err);
+    }
+}
+
+module.exports = { 
+    getUser, 
+    postUser
+}
  
  
  // USER FACING 
