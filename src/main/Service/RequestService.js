@@ -25,6 +25,29 @@ function validateRefundRequest(refundRequest) {
     return (refundRequest.AccountID && refundRequest.Amount); // Boolean && operator will return false if either are missing
 }
 
+async function getRefundRequestsByAccountId(accountId) {
+    try {
+        const data = await refundRequestDao.fetchRefundRequestsByAccountId(accountId); // Fetch refund requests from DAO
+        console.log(data);
+        if (!data || data.length === 0) {
+            throw new Error("No refund requests found for this account");
+        }
+        return data; // Return the retrieved refund requests data
+    } catch (err) {
+
+        console.error("Error retrieving refund requests:", err.message); // Log the actual error message
+        throw new Error(err.message || "Internal Server Error"); // Return specific error message
+    }
+}
+
+
+
+
+
+
+
+
 module.exports = {
-    postRefundRequest
+    postRefundRequest,
+    getRefundRequestsByAccountId
 };

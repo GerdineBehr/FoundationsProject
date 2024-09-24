@@ -1,23 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const logger = require('../util/logger');
 
-// http//localhost:3000/refundRequests
 
-router.get("/", (req, res) => {
-    res.send("This is the root refundRequest route "); 
-})
 
-function validateRefundRequestMiddleware(req, res, next){
-    //Check if there is a valid name and price
+// Middleware for validating refund requests (if needed)
+function validateRefundRequestMiddleware(req, res, next) {
     let jsonBody = req.body; 
-    if(validateRefundRequestMiddleware(jsonBody)){
+    if (validateRefundRequest(jsonBody)) { // Ensure you have a validateRefundRequest function
         next();
-    }else{
+    } else {
         res.status(400).json({
             message: "Invalid Entry"
-        })
+        });
     }
 }
 
-module.exports = router; 
-
+module.exports = router;

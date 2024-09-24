@@ -148,3 +148,427 @@
 2024-09-23T17:59:33.942Z [info]: Server is listening on port: 3000
 2024-09-23T17:59:48.048Z [info]:  Incoming POST : /RefundRequests
 2024-09-23T17:59:48.073Z [info]: Incoming POST : /RefundRequests
+2024-09-23T18:11:49.404Z [info]: Server is listening on port: 3000
+2024-09-23T18:12:00.936Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:12:00.937Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:13:56.603Z [info]: Server is listening on port: 3000
+2024-09-23T18:35:29.391Z [info]: Server is listening on port: 3000
+2024-09-23T18:35:35.112Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:35:35.113Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:38:35.687Z [info]: Server is listening on port: 3000
+2024-09-23T18:39:18.798Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:39:18.800Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:44:16.498Z [info]: Server is listening on port: 3000
+2024-09-23T18:44:20.068Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:44:20.068Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:45:17.683Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:45:17.711Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:45:21.896Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:45:21.898Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:45:42.958Z [info]: Server is listening on port: 3000
+2024-09-23T18:45:48.862Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:45:48.881Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:45:57.385Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:45:57.386Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:50:08.299Z [info]: Server is listening on port: 3000
+2024-09-23T18:50:13.884Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:50:13.903Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:52:32.693Z [info]:  Incoming GET : /refund-requests?accountId=7d006a45-9c24-4c3a-88e3-a4e8894175b
+2024-09-23T18:52:32.695Z [info]: Incoming GET : /refund-requests?accountId=7d006a45-9c24-4c3a-88e3-a4e8894175b
+2024-09-23T18:53:25.313Z [info]: Server is listening on port: 3000
+2024-09-23T18:53:34.140Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:53:34.164Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:55:17.228Z [info]: Server is listening on port: 3000
+2024-09-23T18:55:20.247Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:55:20.271Z [info]: Incoming GET : /RefundRequests
+2024-09-23T18:56:36.607Z [info]: Server is listening on port: 3000
+2024-09-23T18:56:40.991Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T18:56:41.046Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T18:56:41.027Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:38:10.730Z [info]: Server is listening on port: 3000
+2024-09-23T19:38:15.257Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:38:15.280Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:38:15.515Z [error]: Error fetching refund requests by AccountID: ExpressionAttributeValues contains invalid key: Syntax error; key: "#AccountID"
+2024-09-23T19:38:43.950Z [info]: Server is listening on port: 3000
+2024-09-23T19:39:12.082Z [info]: Server is listening on port: 3000
+2024-09-23T19:39:15.367Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:39:15.406Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T19:39:15.394Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:40:59.451Z [info]: Server is listening on port: 3000
+2024-09-23T19:41:08.886Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:41:08.907Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:45:05.852Z [info]: Server is listening on port: 3000
+2024-09-23T19:45:09.496Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:45:09.519Z [error]: Error fetching refund requests by AccountID: result is not defined
+2024-09-23T19:45:09.517Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:46:13.694Z [info]: Server is listening on port: 3000
+2024-09-23T19:46:17.405Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:46:17.438Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T19:46:17.426Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:47:41.092Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:47:41.097Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T19:47:41.094Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:52:15.235Z [info]: Server is listening on port: 3000
+2024-09-23T19:53:40.596Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:53:40.626Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T19:53:40.614Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:54:48.715Z [info]: Server is listening on port: 3000
+2024-09-23T19:54:54.875Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:54:54.921Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T19:54:54.908Z [info]: Incoming GET : /RefundRequests
+2024-09-23T19:58:09.336Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T19:58:09.343Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T19:58:09.338Z [info]: Incoming GET : /RefundRequests
+2024-09-23T20:02:11.038Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:02:11.047Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:02:11.042Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:02:13.322Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:02:13.325Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:02:13.324Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:02:20.214Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:02:20.216Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:02:20.215Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:08:38.487Z [info]: Server is listening on port: 3000
+2024-09-23T20:08:42.871Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:08:42.909Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:08:42.896Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:08:52.984Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T20:08:52.992Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:08:52.989Z [info]: Incoming GET : /RefundRequests
+2024-09-23T20:15:28.115Z [info]: Server is listening on port: 3000
+2024-09-23T20:15:28.858Z [info]:  Incoming GET : /RefundRequests
+2024-09-23T20:15:28.901Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:15:28.886Z [info]: Incoming GET : /RefundRequests
+2024-09-23T20:16:09.513Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9%0A
+2024-09-23T20:16:09.519Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:16:09.515Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9%0A
+2024-09-23T20:19:54.659Z [info]: Server is listening on port: 3000
+2024-09-23T20:19:59.504Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9%0A
+2024-09-23T20:19:59.543Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:19:59.530Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9%0A
+2024-09-23T20:23:54.067Z [info]: Server is listening on port: 3000
+2024-09-23T20:23:59.548Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9%0A
+2024-09-23T20:23:59.589Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:23:59.575Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9%0A
+2024-09-23T20:24:43.298Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:24:43.302Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:24:43.300Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:27:05.283Z [info]: Server is listening on port: 3000
+2024-09-23T20:27:20.296Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:27:20.338Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:27:20.320Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:27:27.332Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b
+2024-09-23T20:27:27.337Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:27:27.335Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b
+2024-09-23T20:27:32.028Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b99
+2024-09-23T20:27:32.036Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:27:32.033Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b99
+2024-09-23T20:27:36.269Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b99
+2024-09-23T20:27:36.272Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:27:36.270Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b99
+2024-09-23T20:27:57.713Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:27:57.717Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:27:57.715Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:29:30.987Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:29:30.990Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:29:30.988Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:29:33.462Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:29:33.464Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:29:33.463Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:29:42.215Z [info]: Server is listening on port: 3000
+2024-09-23T20:29:49.334Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:29:49.376Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:29:49.359Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:30:23.136Z [info]: Server is listening on port: 3000
+2024-09-23T20:30:29.349Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:30:29.392Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:30:29.374Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:31:56.356Z [info]: Server is listening on port: 3000
+2024-09-23T20:32:01.767Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:32:01.802Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:32:01.791Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:32:46.094Z [info]: Server is listening on port: 3000
+2024-09-23T20:33:08.160Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:33:08.192Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:33:08.176Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:34:46.704Z [info]: Server is listening on port: 3000
+2024-09-23T20:34:48.111Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:34:48.151Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:34:48.137Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:35:38.868Z [info]: Server is listening on port: 3000
+2024-09-23T20:35:42.640Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:35:42.680Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:35:42.667Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:38:08.619Z [info]: Server is listening on port: 3000
+2024-09-23T20:38:13.234Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:38:13.271Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:38:13.258Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:38:59.406Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:38:59.411Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:38:59.409Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:42:43.569Z [info]: Server is listening on port: 3000
+2024-09-23T20:43:03.899Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:43:03.980Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:43:03.937Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:50:13.941Z [info]: Server is listening on port: 3000
+2024-09-23T20:50:20.117Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:50:20.176Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:50:20.149Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:55:35.139Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:55:35.154Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:55:35.146Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:56:45.600Z [info]: Server is listening on port: 3000
+2024-09-23T20:56:51.420Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:56:51.472Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:56:51.450Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:57:41.600Z [info]: Server is listening on port: 3000
+2024-09-23T20:57:46.791Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T20:57:46.867Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T20:57:46.826Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:02:06.460Z [info]: Server is listening on port: 3000
+2024-09-23T21:02:11.794Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:02:11.850Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:02:11.830Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:05:59.956Z [info]: Server is listening on port: 3000
+2024-09-23T21:06:09.410Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:06:09.541Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:06:09.521Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:07:40.872Z [info]: Server is listening on port: 3000
+2024-09-23T21:07:46.511Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:07:46.610Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:07:46.558Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:07:53.849Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:07:53.862Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:07:53.853Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:12:57.316Z [info]: Server is listening on port: 3000
+2024-09-23T21:13:17.210Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:13:17.445Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:13:17.280Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:14:50.724Z [info]: Server is listening on port: 3000
+2024-09-23T21:14:58.738Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:14:58.815Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:14:58.784Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:22:04.927Z [info]: Server is listening on port: 3000
+2024-09-23T21:22:11.355Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:22:11.444Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:24:16.962Z [info]: Server is listening on port: 3000
+2024-09-23T21:24:24.340Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:24:24.413Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:24:24.386Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:24:24.416Z [error]: Error retrieving refund requests: Cannot read properties of undefined (reading '0')
+2024-09-23T21:33:05.945Z [info]: Server is listening on port: 3000
+2024-09-23T21:33:16.093Z [info]: Server is listening on port: 3000
+2024-09-23T21:33:22.184Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:33:22.255Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:33:22.224Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:33:22.259Z [error]: Error retrieving refund requests: Cannot read properties of undefined (reading '0')
+2024-09-23T21:35:17.018Z [info]: Server is listening on port: 3000
+2024-09-23T21:35:22.548Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:35:22.646Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-23T21:35:22.586Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:35:22.651Z [error]: Error retrieving refund requests: Cannot read properties of undefined (reading '0')
+2024-09-23T21:35:43.278Z [info]: Server is listening on port: 3000
+2024-09-23T21:35:47.844Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:35:47.884Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:37:58.703Z [info]: Server is listening on port: 3000
+2024-09-23T21:38:03.828Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:38:03.876Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:50:41.070Z [info]: Server is listening on port: 3000
+2024-09-23T21:50:56.341Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:50:56.400Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:52:13.688Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T21:52:13.693Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T22:19:45.977Z [info]:  Incoming POST : /refundRequests
+2024-09-23T22:19:46.014Z [info]: Incoming POST : /refundRequests
+2024-09-23T22:20:47.163Z [info]: Server is listening on port: 3000
+2024-09-23T22:20:52.397Z [info]:  Incoming POST : /refundRequests
+2024-09-23T22:20:52.434Z [info]: Incoming POST : /refundRequests
+2024-09-23T22:21:04.728Z [info]:  Incoming POST : /refundRequests
+2024-09-23T22:21:04.730Z [info]: Incoming POST : /refundRequests
+2024-09-23T23:04:08.593Z [info]: Server is listening on port: 3000
+2024-09-23T23:04:16.199Z [info]:  Incoming POST : /refundRequests
+2024-09-23T23:04:16.270Z [info]: Incoming POST : /refundRequests
+2024-09-23T23:05:29.403Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:05:43.390Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:11:34.562Z [info]: Server is listening on port: 3000
+2024-09-23T23:16:18.591Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:17:30.729Z [info]:  Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:17:30.733Z [info]: Incoming GET : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:18:19.816Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:18:19.817Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:20:37.764Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:20:37.765Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:34:23.291Z [info]: Server is listening on port: 3000
+2024-09-23T23:36:24.218Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:36:24.242Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:36:24.442Z [error]: Error posting refund request: ReturnValues can only be ALL_OLD or NONE
+2024-09-23T23:39:08.018Z [info]: Server is listening on port: 3000
+2024-09-23T23:39:25.110Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:39:25.133Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:42:05.064Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:42:05.065Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:44:00.785Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-23T23:44:00.786Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:09:51.599Z [info]: Server is listening on port: 3000
+2024-09-24T00:10:04.720Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:10:04.756Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:13:20.980Z [info]: Server is listening on port: 3000
+2024-09-24T00:13:28.513Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:13:28.548Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:15:00.684Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:15:00.685Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:15:41.344Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:15:41.346Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:25:46.275Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T00:25:46.281Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:34:07.173Z [info]: Server is listening on port: 3000
+2024-09-24T01:34:11.023Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:34:11.046Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:34:11.186Z [error]: Error posting refund request: ReturnValues can only be ALL_OLD or NONE
+2024-09-24T01:35:48.247Z [info]: Server is listening on port: 3000
+2024-09-24T01:35:52.061Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:35:52.085Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:37:21.997Z [info]: Server is listening on port: 3000
+2024-09-24T01:37:24.890Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:37:24.914Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:37:41.266Z [info]: Server is listening on port: 3000
+2024-09-24T01:37:45.210Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:37:45.233Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:43:08.936Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:43:08.938Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:43:21.773Z [info]: Server is listening on port: 3000
+2024-09-24T01:43:24.227Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:43:24.298Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:45:49.918Z [info]: Server is listening on port: 3000
+2024-09-24T01:45:54.464Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:45:54.491Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:48:37.527Z [info]: Server is listening on port: 3000
+2024-09-24T01:48:41.219Z [info]:  Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:48:41.238Z [info]: Incoming POST : /refundRequests?AccountID=7d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T01:49:05.074Z [info]:  Incoming POST : /refundRequests
+2024-09-24T01:49:05.075Z [info]: Incoming POST : /refundRequests
+2024-09-24T01:49:15.743Z [info]:  Incoming POST : /RefundRequests
+2024-09-24T01:49:15.744Z [info]: Incoming POST : /RefundRequests
+2024-09-24T01:49:23.881Z [info]:  Incoming POST : /refundRequest
+2024-09-24T01:49:23.882Z [info]: Incoming POST : /refundRequest
+2024-09-24T01:49:48.712Z [info]:  Incoming POST : /refundRequests
+2024-09-24T01:49:48.713Z [info]: Incoming POST : /refundRequests
+2024-09-24T01:50:10.930Z [info]:  Incoming POST : /refundRequests
+2024-09-24T01:50:10.930Z [info]: Incoming POST : /refundRequests
+2024-09-24T01:57:45.084Z [info]: Server is listening on port: 3000
+2024-09-24T01:57:55.084Z [info]:  Incoming POST : /refundRequests
+2024-09-24T01:57:55.102Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:03:29.386Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:03:29.390Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:04:08.001Z [info]: Server is listening on port: 3000
+2024-09-24T02:04:14.931Z [info]:  Incoming POST : /RefundRequests
+2024-09-24T02:04:14.951Z [info]: Incoming POST : /RefundRequests
+2024-09-24T02:04:20.217Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:04:20.219Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:06:33.897Z [info]: Server is listening on port: 3000
+2024-09-24T02:06:35.475Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:06:35.494Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:07:07.237Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:07:07.238Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:07:16.058Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:07:16.058Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:08:03.117Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:08:03.118Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:12:07.354Z [info]: Server is listening on port: 3000
+2024-09-24T02:12:14.143Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:12:14.166Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:17:37.727Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:17:37.731Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:17:44.428Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:17:44.429Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:18:05.510Z [info]: Server is listening on port: 3000
+2024-09-24T02:18:47.131Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:18:47.159Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:20:43.560Z [info]: Server is listening on port: 3000
+2024-09-24T02:20:48.640Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:20:48.658Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:22:49.717Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:22:49.718Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:24:32.968Z [info]: Server is listening on port: 3000
+2024-09-24T02:24:47.937Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:24:47.962Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:28:27.665Z [info]: Server is listening on port: 3000
+2024-09-24T02:28:37.287Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:28:37.309Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:28:56.094Z [info]: Server is listening on port: 3000
+2024-09-24T02:29:02.042Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:29:02.055Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:31:54.930Z [info]: Server is listening on port: 3000
+2024-09-24T02:32:03.364Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:32:03.384Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:36:33.729Z [info]: Server is listening on port: 3000
+2024-09-24T02:36:41.806Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:36:41.827Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:36:42.035Z [error]: ReturnValues can only be ALL_OLD or NONE
+2024-09-24T02:37:18.450Z [info]: Server is listening on port: 3000
+2024-09-24T02:37:22.370Z [info]: Server is listening on port: 3000
+2024-09-24T02:37:30.172Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:37:30.193Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:41:29.070Z [info]: Server is listening on port: 3000
+2024-09-24T02:41:34.960Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:41:35.100Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:43:07.231Z [info]: Server is listening on port: 3000
+2024-09-24T02:43:10.839Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:43:10.859Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:44:12.968Z [info]: Server is listening on port: 3000
+2024-09-24T02:44:17.724Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:44:17.773Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:45:32.996Z [info]: Server is listening on port: 3000
+2024-09-24T02:45:35.997Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:45:36.013Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:47:07.214Z [info]: Server is listening on port: 3000
+2024-09-24T02:47:15.741Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:47:15.760Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:49:06.157Z [info]: Server is listening on port: 3000
+2024-09-24T02:49:13.699Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:49:13.740Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:52:56.159Z [info]: Server is listening on port: 3000
+2024-09-24T02:53:12.815Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:53:12.886Z [info]: Incoming POST : /refundRequests
+2024-09-24T02:54:49.069Z [info]: Server is listening on port: 3000
+2024-09-24T02:55:01.929Z [info]:  Incoming POST : /refundRequests
+2024-09-24T02:55:02.008Z [info]: Incoming POST : /refundRequests
+2024-09-24T03:01:26.873Z [info]: Server is listening on port: 3000
+2024-09-24T03:01:48.155Z [info]:  Incoming POST : /refundRequests
+2024-09-24T03:01:48.224Z [info]: Incoming POST : /refundRequests
+2024-09-24T03:03:35.720Z [info]: Server is listening on port: 3000
+2024-09-24T03:03:42.264Z [info]:  Incoming POST : /refundRequests
+2024-09-24T03:03:42.313Z [info]: Incoming POST : /refundRequests
+2024-09-24T03:05:28.085Z [info]: Server is listening on port: 3000
+2024-09-24T03:05:38.020Z [info]:  Incoming POST : /refundRequests
+2024-09-24T03:05:38.081Z [info]: Incoming POST : /refundRequests
+2024-09-24T03:08:26.807Z [info]: Server is listening on port: 3000
+2024-09-24T03:08:39.029Z [info]:  Incoming POST : /refundRequests
+2024-09-24T03:08:39.178Z [info]: Incoming POST : /refundRequests
+2024-09-24T03:09:13.776Z [info]:  Incoming GET : /refundRequests?AccountID=Dd006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T03:09:13.779Z [info]: Incoming GET : /refundRequests?AccountID=Dd006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T03:17:28.509Z [info]: Server is listening on port: 3000
+2024-09-24T03:17:32.181Z [info]:  Incoming POST : /accounts
+2024-09-24T03:17:32.213Z [info]: Incoming POST : /accounts
+2024-09-24T03:17:47.253Z [info]:  Incoming POST : /accounts
+2024-09-24T03:17:47.254Z [info]: Incoming POST : /accounts
+2024-09-24T03:19:07.528Z [info]: Server is listening on port: 3000
+2024-09-24T03:19:12.083Z [info]:  Incoming POST : /accounts
+2024-09-24T03:19:12.171Z [info]: Incoming POST : /accounts
+2024-09-24T03:19:55.434Z [info]: Server is listening on port: 3000
+2024-09-24T03:19:58.640Z [info]:  Incoming POST : /accounts
+2024-09-24T03:19:58.680Z [info]: Incoming POST : /accounts
+2024-09-24T03:22:51.441Z [info]:  Incoming POST : /accounts
+2024-09-24T03:22:51.445Z [info]: Incoming POST : /accounts
+2024-09-24T03:23:17.147Z [info]: Server is listening on port: 3000
+2024-09-24T03:23:23.335Z [info]:  Incoming POST : /accounts
+2024-09-24T03:23:23.371Z [info]: Incoming POST : /accounts
+2024-09-24T03:24:18.788Z [info]: Server is listening on port: 3000
+2024-09-24T03:24:24.472Z [info]:  Incoming POST : /accounts
+2024-09-24T03:24:24.540Z [info]: Incoming POST : /accounts
+2024-09-24T03:24:59.609Z [info]: Server is listening on port: 3000
+2024-09-24T03:25:08.606Z [info]:  Incoming POST : /accounts
+2024-09-24T03:25:08.659Z [info]: Incoming POST : /accounts
+2024-09-24T03:28:07.417Z [info]: Server is listening on port: 3000
+2024-09-24T03:28:17.164Z [info]:  Incoming POST : /accounts
+2024-09-24T03:28:17.235Z [info]: Incoming POST : /accounts

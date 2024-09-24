@@ -1,7 +1,8 @@
 const express = require('express');
 const logger = require('./util/logger');
-//const refundRequestRouter = require('./routes/refundRequestRoute'); // http//localhost:3000/refundRequests
+//const refundRequestRouter = require('./routes/refundRequestRoute');  // http//localhost:3000/refundRequests
 const refundRequestRouter = require("./Controller/RefundRequestRouter");
+//const refundRequestRouter = require("./routes/RequestService");
 const accountRouter = require("./Controller/AccountRouter");
 //const accountRouter = require('./routes/accountRoute');
 
@@ -45,7 +46,7 @@ app.use((req, res, next) =>{
 //use the router
 app.use("/accounts", accountRouter);
 
-app.use("/RefundRequests", refundRequestRouter); // refundRequests endpoint is expected 
+app.use("/refundRequests", refundRequestRouter); // refundRequests endpoint is expected 
 
 
 app.listen(PORT, () =>{
