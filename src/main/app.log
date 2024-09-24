@@ -572,3 +572,31 @@
 2024-09-24T03:28:07.417Z [info]: Server is listening on port: 3000
 2024-09-24T03:28:17.164Z [info]:  Incoming POST : /accounts
 2024-09-24T03:28:17.235Z [info]: Incoming POST : /accounts
+2024-09-24T14:18:48.314Z [info]: Server is listening on port: 3000
+2024-09-24T14:19:35.018Z [info]:  Incoming GET : /refundRequests/pending
+2024-09-24T14:19:35.020Z [info]: Incoming GET : /refundRequests/pending
+2024-09-24T14:19:35.316Z [error]: Error fetching pending refund requests: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: Status
+2024-09-24T14:19:35.318Z [error]: Error retrieving pending refund requests: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: Status
+2024-09-24T14:22:04.467Z [info]: Server is listening on port: 3000
+2024-09-24T14:22:16.859Z [info]:  Incoming GET : /refundRequests/pending
+2024-09-24T14:22:16.863Z [info]: Incoming GET : /refundRequests/pending
+2024-09-24T14:22:17.201Z [error]: Error fetching pending refund requests: Invalid FilterExpression: An expression attribute name used in the document path is not defined; attribute name: #Status
+2024-09-24T14:22:17.204Z [error]: Error retrieving pending refund requests: Invalid FilterExpression: An expression attribute name used in the document path is not defined; attribute name: #Status
+2024-09-24T14:22:48.612Z [info]: Server is listening on port: 3000
+2024-09-24T14:23:04.612Z [info]:  Incoming GET : /refundRequests/pending
+2024-09-24T14:23:04.615Z [info]: Incoming GET : /refundRequests/pending
+2024-09-24T14:23:04.854Z [error]: Error fetching pending refund requests: ExpressionAttributeValues contains invalid key: Syntax error; key: ":#status"
+2024-09-24T14:23:04.856Z [error]: Error retrieving pending refund requests: ExpressionAttributeValues contains invalid key: Syntax error; key: ":#status"
+2024-09-24T14:26:43.081Z [info]: Server is listening on port: 3000
+2024-09-24T14:26:54.712Z [info]:  Incoming GET : /refundRequests/pending
+2024-09-24T14:26:54.713Z [info]: Incoming GET : /refundRequests/pending
+2024-09-24T14:30:35.673Z [info]:  Incoming GET : /refundRequests
+2024-09-24T14:30:35.683Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-24T14:30:35.673Z [info]: Incoming GET : /refundRequests
+2024-09-24T14:30:35.685Z [error]: Error retrieving refund requests: Cannot read properties of undefined (reading '0')
+2024-09-24T14:30:39.477Z [info]:  Incoming GET : /refundRequests
+2024-09-24T14:30:39.481Z [error]: Error fetching refund requests by AccountID: Cannot read properties of undefined (reading '0')
+2024-09-24T14:30:39.478Z [info]: Incoming GET : /refundRequests
+2024-09-24T14:30:39.482Z [error]: Error retrieving refund requests: Cannot read properties of undefined (reading '0')
+2024-09-24T14:31:14.438Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T14:31:14.438Z [info]: Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9

@@ -1,53 +1,56 @@
 const refundRequestDao = require("../DAO/RequestDAO");
-const uuid = require("uuid"); 
+const uuid = require("uuid");
 
 async function postRefundRequest(refundRequest) {
-    // Validate the account
     if (validateRefundRequest(refundRequest)) {
-    try{// Destructure refundRquest and add RequestNumber and Status
-        let data = await refundRequestDao.postRefundRequest({
-            ...refundRequest, // Spread the account properties
-            RequestNumber: uuid.v4(), // Add unique AccountID using uuid
-            Status: "Pending"
-        });
-        return data;
-    } catch (err){
-        console.error("Error creating refund request:", err);
-        throw new Error("Internal Server Error");
+        try {
+            let data = await refundRequestDao.postRefundRequest({
+                ...refundRequest, 
+                RequestNumber: uuid.v4(), 
+                Status: "Pending"
+            });
+            return data;
+        } catch (err) {
+            console.error("Error creating refund request:", err);
+            throw new Error("Internal Server Error");
+        }
     }
-}
     throw new Error("Invalid refund request data");
-
-}; 
+}
 
 function validateRefundRequest(refundRequest) {
-    // Ensure both AccountID and amount exist
-    return (refundRequest.AccountID && refundRequest.Amount); // Boolean && operator will return false if either are missing
+    return (refundRequest.AccountID && refundRequest.Amount);
 }
 
 async function getRefundRequestsByAccountId(accountId) {
     try {
-        const data = await refundRequestDao.fetchRefundRequestsByAccountId(accountId); // Fetch refund requests from DAO
+        const data = await refundRequestDao.fetchRefundRequestsByAccountId(accountId);
         console.log(data);
         if (!data || data.length === 0) {
             throw new Error("No refund requests found for this account");
         }
-        return data; // Return the retrieved refund requests data
+        return data;
     } catch (err) {
-
-        console.error("Error retrieving refund requests:", err.message); // Log the actual error message
-        throw new Error(err.message || "Internal Server Error"); // Return specific error message
+        console.error("Error retrieving refund requests:", err.message);
+        throw new Error(err.message || "Internal Server Error");
     }
 }
 
-
-
-
-
-
-
+async function getPendingRefundRequests() {
+    try {
+        const data = await refundRequestDao.fetchPendingRefundRequests();
+        if (!data || data.length === 0) {
+            throw new Error("No pending refund requests found");
+        }
+        return data;
+    } catch (err) {
+        console.error("Error retrieving pending refund requests:", err.message);
+        throw new Error(err.message || "Internal Server Error");
+    }
+}
 
 module.exports = {
     postRefundRequest,
-    getRefundRequestsByAccountId
+    getRefundRequestsByAccountId,
+    getPendingRefundRequests // Export the new function
 };
