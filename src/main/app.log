@@ -624,3 +624,22 @@
 2024-09-24T16:40:33.765Z [info]: Server is listening on port: 3000
 2024-09-24T16:40:38.802Z [info]:  Incoming POST : /refundRequests/login
 2024-09-24T16:42:42.326Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T17:19:08.262Z [info]: Server is listening on port: 3000
+2024-09-24T17:25:48.081Z [info]: Server is listening on port: 3000
+2024-09-24T17:27:42.955Z [info]:  Incoming PUT : /refundRequests/updateStatusost:3000/refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T17:29:14.988Z [info]:  Incoming PUT : /refundRequests/updateStatus
+2024-09-24T17:29:15.072Z [error]: Error updating refund request status: updateRefundRequestStatus is not defined
+2024-09-24T17:31:21.245Z [info]: Server is listening on port: 3000
+2024-09-24T17:32:31.360Z [info]:  Incoming PUT : /refundRequests/updateStatus
+2024-09-24T17:32:31.437Z [error]: Error updating refund request status: UpdateCommand is not defined
+2024-09-24T17:32:31.490Z [error]: Error updating refund request status: UpdateCommand is not defined
+2024-09-24T17:37:54.427Z [info]: Server is listening on port: 3000
+2024-09-24T17:38:00.013Z [info]:  Incoming PUT : /refundRequests/updateStatus
+2024-09-24T17:38:00.093Z [error]: Error updating refund request status: UpdateCommand is not a constructor
+2024-09-24T17:40:27.905Z [info]: Server is listening on port: 3000
+2024-09-24T17:40:32.268Z [info]:  Incoming PUT : /refundRequests/updateStatus
+2024-09-24T17:40:32.350Z [error]: Error updating refund request status: UpdateCommand is not a constructor
+2024-09-24T17:40:49.558Z [info]: Server is listening on port: 3000
+2024-09-24T17:40:56.726Z [info]:  Incoming PUT : /refundRequests/updateStatus
+2024-09-24T17:43:13.567Z [info]: Server is listening on port: 3000
+2024-09-24T17:43:14.719Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9

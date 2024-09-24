@@ -89,11 +89,25 @@ async function getRefundRequestsByAccountIdExcludingStatus(accountId, status) {
     }
 }
 
+async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
+    try {
+        const updatedRequest = await refundRequestDao.updateRefundRequestStatus(accountId, requestNumber, newStatus);
+        if (!updatedRequest) {
+            throw new Error(`No pending refund request found for AccountID: ${accountId} and RequestNumber: ${requestNumber}`);
+        }
+        return updatedRequest;
+    } catch (err) {
+        console.error(`Error updating refund request status: ${err.message}`);
+        throw new Error(err.message || "Internal Server Error");
+    }
+}
+
 module.exports = {
     postRefundRequest,
     getRefundRequestsByAccountId,
     getPendingRefundRequests,
     getRefundRequestsByAccountIdAndStatus,
     getRefundRequestsByAccountIdExcludingStatus,
-    login // Export the login function
+    updateRefundRequestStatus, // Export the new function
+    login
 };

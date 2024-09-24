@@ -1,5 +1,5 @@
 const { DynamoDBClient, QueryCommand, ScanCommand } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
+const { DynamoDBDocumentClient, PutCommand, UpdateCommand } = require("@aws-sdk/lib-dynamodb"); // Import UpdateCommand from lib-dynamodb
 const { createLogger, transports, format } = require('winston');
 require('dotenv').config();
 
@@ -167,14 +167,43 @@ async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) 
     }
 }
 
+// Update Refund Request Status
+async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
+    const command = new UpdateCommand({
+        TableName,
+        Key: {
+            AccountID: accountId,
+            RequestNumber: requestNumber
+        },
+        UpdateExpression: "set #status = :newStatus",
+        ConditionExpression: "#status = :pendingStatus", // Only update if the current status is "Pending"
+        ExpressionAttributeNames: {
+            "#status": "Status"
+        },
+        ExpressionAttributeValues: {
+            ":newStatus": newStatus,
+            ":pendingStatus": "Pending" // Condition to ensure it only updates pending requests
+        },
+        ReturnValues: "UPDATED_NEW"
+    });
+    
+    try {
+        const data = await documentClient.send(command);
+        return data.Attributes; // Return updated attributes
+    } catch (err) {
+        logger.error("Error updating refund request status:", err);
+        throw err;
+    }
+}
+
 // Check Login Credentials
 async function login(username, password) {
     const command = new ScanCommand({ // Use Scan instead of Query to check Username and Password
         TableName: AccountTableName,
         FilterExpression: "Username = :username AND Password = :password",
         ExpressionAttributeValues: {
-            ":username": { S: username },
-            ":password": { S: password }
+            ":username": username,
+            ":password": password
         }
     });
     try {
@@ -192,5 +221,6 @@ module.exports = {
     fetchPendingRefundRequests,
     fetchRefundRequestsByAccountIdAndStatus,
     fetchRefundRequestsByAccountIdExcludingStatus,
-    login // Export the login function
+    updateRefundRequestStatus, // Export the new function
+    login
 };

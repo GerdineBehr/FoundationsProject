@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();  
 const refundRequestService = require("../Service/RequestService");
-const { getRefundRequestsByAccountId, getPendingRefundRequests, getRefundRequestsByAccountIdAndStatus, getRefundRequestsByAccountIdExcludingStatus, login } = require('../Service/RequestService');
+const { updateRefundRequestStatus, getRefundRequestsByAccountId, getPendingRefundRequests, getRefundRequestsByAccountIdAndStatus, getRefundRequestsByAccountIdExcludingStatus,  login } = require('../Service/RequestService');
 const logger = require('../util/logger');
 
 // POST Create new Refund Request
@@ -114,4 +114,20 @@ router.get("/pending", async (req, res) => {
     }
 });
 
+// PUT route to update refund request status
+router.put("/updateStatus", async (req, res) => {
+    const { AccountID, RequestNumber, NewStatus } = req.body; // Expect these fields in the request body
+    try {
+        const updatedRequest = await updateRefundRequestStatus(AccountID, RequestNumber, NewStatus);
+        res.status(200).json({
+            message: "Refund request status updated successfully",
+            updatedRequest
+        });
+    } catch (err) {
+        logger.error("Error updating refund request status:", err);
+        res.status(500).json({ message: "Internal Server Error", error: err.message });
+    }
+});
+
 module.exports = router;
+
