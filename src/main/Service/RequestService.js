@@ -36,6 +36,16 @@ async function getRefundRequestsByAccountId(accountId) {
     }
 }
 
+async function getUserRole(username) {
+    try {
+        const role = await refundRequestDao.fetchUserRole(username);
+        return role;
+    } catch (err) {
+        console.error(`Error fetching user role for ${username}: ${err.message}`);
+        throw new Error(err.message || "Internal Server Error");
+    }
+}
+
 // Login Service Function
 async function login(username, password) {
     try {
@@ -108,6 +118,7 @@ module.exports = {
     getPendingRefundRequests,
     getRefundRequestsByAccountIdAndStatus,
     getRefundRequestsByAccountIdExcludingStatus,
-    updateRefundRequestStatus, // Export the new function
-    login
+    updateRefundRequestStatus,
+    login,
+    getUserRole // Export the function
 };

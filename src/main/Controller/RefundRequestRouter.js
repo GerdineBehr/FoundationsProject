@@ -1,11 +1,12 @@
 const express = require("express");
-const router = express.Router();  
+const router = express.Router();
 const refundRequestService = require("../Service/RequestService");
-const { updateRefundRequestStatus, getRefundRequestsByAccountId, getPendingRefundRequests, getRefundRequestsByAccountIdAndStatus, getRefundRequestsByAccountIdExcludingStatus,  login } = require('../Service/RequestService');
+const { updateRefundRequestStatus, getRefundRequestsByAccountId, getPendingRefundRequests, getRefundRequestsByAccountIdAndStatus, getRefundRequestsByAccountIdExcludingStatus, login } = require('../Service/RequestService');
 const logger = require('../util/logger');
+const { checkRole } = require("../Middleware/authMiddleware"); // Import middleware
 
 // POST Create new Refund Request
-router.post("/", async (req, res) => {
+router.post("/", checkRole("Employee"), async (req, res) => {
     try {
         const data = await refundRequestService.postRefundRequest(req.body);
         console.log("Data returned from database:", data);
@@ -35,8 +36,8 @@ router.post("/login", async (req, res) => {
     }
 });
 
-// GET route for refund requests by AccountID
-router.get("/", async (req, res) => {
+// GET route for refund requests by AccountID (Only Employee role can access this)
+router.get("/", checkRole("Employee"), async (req, res) => {
     const accountId = req.query.AccountID;
     console.log("Received AccountID:", accountId);
 
@@ -55,8 +56,25 @@ router.get("/", async (req, res) => {
     }
 });
 
-// GET route for refund requests by AccountID and Status
-router.get("/status", async (req, res) => {
+// GET route for all pending refund requests (Only Manager role can access this)
+router.get("/pending", checkRole("Manager"), async (req, res) => {
+    try {
+        const pendingRequests = await getPendingRefundRequests();
+        console.log("Fetched pending refund requests:", pendingRequests);
+
+        if (pendingRequests === undefined || pendingRequests.length === 0) {
+            return res.status(404).json({ message: "No pending refund requests found." });
+        }
+
+        res.status(200).json(pendingRequests);
+    } catch (err) {
+        logger.error("Error retrieving pending refund requests:", err);
+        res.status(500).json({ message: "Internal Server Error", error: err.message });
+    }
+});
+
+// GET route for refund requests by AccountID and Status (Only Employee role can access this)
+router.get("/status", checkRole("Employee"), async (req, res) => {
     const accountId = req.query.AccountID;
     const status = req.query.Status;
     console.log(`Received AccountID: ${accountId} and Status: ${status}`);
@@ -76,8 +94,8 @@ router.get("/status", async (req, res) => {
     }
 });
 
-// GET route for refund requests by AccountID excluding a Status
-router.get("/exclude-status", async (req, res) => {
+// GET route for refund requests by AccountID excluding a Status (Only Employee role can access this)
+router.get("/exclude-status", checkRole("Employee"), async (req, res) => {
     const accountId = req.query.AccountID;
     const status = req.query.Status;
     console.log(`Received AccountID: ${accountId} to exclude Status: ${status}`);
@@ -97,25 +115,8 @@ router.get("/exclude-status", async (req, res) => {
     }
 });
 
-// GET route for all pending refund requests
-router.get("/pending", async (req, res) => {
-    try {
-        const pendingRequests = await getPendingRefundRequests();
-        console.log("Fetched pending refund requests:", pendingRequests);
-
-        if (pendingRequests === undefined || pendingRequests.length === 0) {
-            return res.status(404).json({ message: "No pending refund requests found." });
-        }
-
-        res.status(200).json(pendingRequests);
-    } catch (err) {
-        logger.error("Error retrieving pending refund requests:", err);
-        res.status(500).json({ message: "Internal Server Error", error: err.message });
-    }
-});
-
-// PUT route to update refund request status
-router.put("/updateStatus", async (req, res) => {
+// PUT route to update refund request status (Only Manager role can access this)
+router.put("/updateStatus", checkRole("Manager"), async (req, res) => {
     const { AccountID, RequestNumber, NewStatus } = req.body; // Expect these fields in the request body
     try {
         const updatedRequest = await updateRefundRequestStatus(AccountID, RequestNumber, NewStatus);
@@ -130,4 +131,3 @@ router.put("/updateStatus", async (req, res) => {
 });
 
 module.exports = router;
-

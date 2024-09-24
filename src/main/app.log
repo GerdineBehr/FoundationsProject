@@ -643,3 +643,53 @@
 2024-09-24T17:40:56.726Z [info]:  Incoming PUT : /refundRequests/updateStatus
 2024-09-24T17:43:13.567Z [info]: Server is listening on port: 3000
 2024-09-24T17:43:14.719Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T18:30:39.402Z [info]: Server is listening on port: 3000
+2024-09-24T18:30:45.918Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T18:30:45.988Z [error]: Error fetching user role: Cannot read properties of undefined (reading 'S')
+2024-09-24T18:34:31.589Z [info]:  Incoming POST : /refundRequests/login
+2024-09-24T18:34:31.711Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-24T18:34:31.714Z [error]: Error during login: Internal Server Error
+2024-09-24T18:44:52.137Z [info]: Server is listening on port: 3000
+2024-09-24T18:44:59.665Z [info]:  Incoming POST : /refundRequests/login
+2024-09-24T18:47:05.701Z [info]:  Incoming POST : /refundRequests
+2024-09-24T18:47:05.714Z [error]: Error fetching user role: Cannot read properties of undefined (reading 'S')
+2024-09-24T18:54:51.872Z [info]: Server is listening on port: 3000
+2024-09-24T18:55:00.341Z [info]:  Incoming POST : /refundRequests
+2024-09-24T18:55:00.429Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T18:55:29.480Z [info]:  Incoming POST : /refundRequests
+2024-09-24T18:55:29.484Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T18:56:54.229Z [info]:  Incoming POST : /refundRequests
+2024-09-24T18:56:54.239Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T18:59:27.267Z [info]: Server is listening on port: 3000
+2024-09-24T18:59:31.381Z [info]:  Incoming POST : /refundRequests
+2024-09-24T18:59:31.456Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:01:21.207Z [info]: Server is listening on port: 3000
+2024-09-24T19:01:25.165Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:01:25.316Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:05:27.254Z [info]: Server is listening on port: 3000
+2024-09-24T19:05:29.587Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:05:29.660Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:05:40.585Z [info]: Server is listening on port: 3000
+2024-09-24T19:05:49.389Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:05:49.482Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:07:48.705Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:07:48.743Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:13:04.984Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:13:04.998Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:19:01.125Z [info]: Server is listening on port: 3000
+2024-09-24T19:19:10.945Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:19:11.022Z [error]: Error fetching user role: Cannot read properties of undefined (reading '0')
+2024-09-24T19:33:12.185Z [info]: Server is listening on port: 3000
+2024-09-24T19:33:15.943Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:33:16.659Z [error]: Error in postRefundRequest: One or more parameter values were invalid: Type mismatch for key AccountID expected: S actual: M
+2024-09-24T19:36:48.973Z [info]: Server is listening on port: 3000
+2024-09-24T19:37:00.292Z [info]:  Incoming POST : /refundRequests
+2024-09-24T19:46:46.182Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:46:53.697Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T19:47:08.687Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:47:14.488Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:51:17.839Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:51:26.214Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:51:33.151Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:51:43.954Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-24T19:54:12.302Z [info]:  Incoming GET : /refundRequests?AccountID=1&Username=User1
