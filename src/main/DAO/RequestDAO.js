@@ -65,7 +65,7 @@ async function fetchRefundRequestsByAccountId(accountId) {
         }));
 
         console.log("Query result:", JSON.stringify(data, null, 2)); // Log the entire query result
-        return { refundRequest } || [];  // Return an empty array if Items is undefined
+        return refundRequest || [];  // Return an empty array if Items is undefined
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID:", err);
         throw err;
@@ -102,8 +102,74 @@ async function fetchPendingRefundRequests() {
     }
 }
 
+// Get Refund Requests by AccountID and Status
+async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
+    const command = new QueryCommand({
+        TableName,
+        KeyConditionExpression: "AccountID = :accountId",
+        FilterExpression: "#status = :status",
+        ExpressionAttributeNames: {
+            "#status": "Status"
+        },
+        ExpressionAttributeValues: {
+            ":accountId": { S: accountId },
+            ":status": { S: status }
+        }
+    });
+    try {
+        const data = await documentClient.send(command);
+        const refundRequests = (data.Items || []).map((item) => ({
+            AccountID: item.AccountID.S,
+            Amount: item.Amount.N,
+            Description: item.Description.S,
+            Status: item.Status.S,
+            RequestNumber: item.RequestNumber.S
+        }));
+
+        console.log("Query result by status:", JSON.stringify(data, null, 2));
+        return refundRequests || [];
+    } catch (err) {
+        logger.error("Error fetching refund requests by AccountID and Status:", err);
+        throw err;
+    }
+}
+
+// Get Refund Requests by AccountID excluding a Status
+async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) {
+    const command = new QueryCommand({
+        TableName,
+        KeyConditionExpression: "AccountID = :accountId",
+        FilterExpression: "NOT #status = :status",
+        ExpressionAttributeNames: {
+            "#status": "Status"
+        },
+        ExpressionAttributeValues: {
+            ":accountId": { S: accountId },
+            ":status": { S: status }
+        }
+    });
+    try {
+        const data = await documentClient.send(command);
+        const refundRequests = (data.Items || []).map((item) => ({
+            AccountID: item.AccountID.S,
+            Amount: item.Amount.N,
+            Description: item.Description.S,
+            Status: item.Status.S,
+            RequestNumber: item.RequestNumber.S
+        }));
+
+        console.log("Query result excluding status:", JSON.stringify(data, null, 2));
+        return refundRequests || [];
+    } catch (err) {
+        logger.error("Error fetching refund requests by AccountID excluding Status:", err);
+        throw err;
+    }
+}
+
 module.exports = {
     postRefundRequest,
     fetchRefundRequestsByAccountId,
-    fetchPendingRefundRequests // Export the new function
+    fetchPendingRefundRequests,
+    fetchRefundRequestsByAccountIdAndStatus, // Export new function
+    fetchRefundRequestsByAccountIdExcludingStatus // Export new function
 };

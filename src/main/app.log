@@ -600,3 +600,19 @@
 2024-09-24T14:30:39.482Z [error]: Error retrieving refund requests: Cannot read properties of undefined (reading '0')
 2024-09-24T14:31:14.438Z [info]:  Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
 2024-09-24T14:31:14.438Z [info]: Incoming GET : /refundRequests?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9
+2024-09-24T15:10:39.884Z [info]: Server is listening on port: 3000
+2024-09-24T15:13:09.331Z [info]:  Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=pending
+2024-09-24T15:13:09.332Z [info]: Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=pending
+2024-09-24T15:13:09.606Z [error]: Error retrieving refund requests by status: Error: No refund requests with status "pending" found for this account
+2024-09-24T15:13:45.649Z [info]:  Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=pending
+2024-09-24T15:13:45.651Z [info]: Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=pending
+2024-09-24T15:13:45.676Z [error]: Error retrieving refund requests by status: Error: No refund requests with status "pending" found for this account
+2024-09-24T15:13:52.055Z [info]:  Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=Pending
+2024-09-24T15:13:52.056Z [info]: Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=Pending
+2024-09-24T15:23:19.146Z [info]:  Incoming GET : /refundRequests/exclude-status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=Pending
+2024-09-24T15:23:19.150Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=Pending
+2024-09-24T15:38:25.579Z [info]:  Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=pending
+2024-09-24T15:38:25.582Z [info]: Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=pending
+2024-09-24T15:38:25.838Z [error]: Error retrieving refund requests by status: Error: No refund requests with status "pending" found for this account
+2024-09-24T15:38:46.462Z [info]:  Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=Pending
+2024-09-24T15:38:46.462Z [info]: Incoming GET : /refundRequests/status?AccountID=2d006a45-9c24-4c3a-88e3-a4e8894175b9&Status=Pending

@@ -49,8 +49,38 @@ async function getPendingRefundRequests() {
     }
 }
 
+// Get Refund Requests by AccountID and Status
+async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
+    try {
+        const data = await refundRequestDao.fetchRefundRequestsByAccountIdAndStatus(accountId, status);
+        if (!data || data.length === 0) {
+            throw new Error(`No refund requests with status "${status}" found for this account`);
+        }
+        return data;
+    } catch (err) {
+        console.error(`Error retrieving refund requests by AccountID and Status: ${err.message}`);
+        throw new Error(err.message || "Internal Server Error");
+    }
+}
+
+// Get Refund Requests by AccountID excluding a Status
+async function getRefundRequestsByAccountIdExcludingStatus(accountId, status) {
+    try {
+        const data = await refundRequestDao.fetchRefundRequestsByAccountIdExcludingStatus(accountId, status);
+        if (!data || data.length === 0) {
+            throw new Error(`No refund requests excluding status "${status}" found for this account`);
+        }
+        return data;
+    } catch (err) {
+        console.error(`Error retrieving refund requests by AccountID excluding Status: ${err.message}`);
+        throw new Error(err.message || "Internal Server Error");
+    }
+}
+
 module.exports = {
     postRefundRequest,
     getRefundRequestsByAccountId,
-    getPendingRefundRequests // Export the new function
+    getPendingRefundRequests,
+    getRefundRequestsByAccountIdAndStatus, // Export new function
+    getRefundRequestsByAccountIdExcludingStatus // Export new function
 };
