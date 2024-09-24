@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();  
 const refundRequestService = require("../Service/RequestService");
-const { getRefundRequestsByAccountId, getPendingRefundRequests, getRefundRequestsByAccountIdAndStatus, getRefundRequestsByAccountIdExcludingStatus } = require('../Service/RequestService');
+const { getRefundRequestsByAccountId, getPendingRefundRequests, getRefundRequestsByAccountIdAndStatus, getRefundRequestsByAccountIdExcludingStatus, login } = require('../Service/RequestService');
 const logger = require('../util/logger');
 
 // POST Create new Refund Request
@@ -15,6 +15,22 @@ router.post("/", async (req, res) => {
             res.status(400).json({ message: "Refund Request not created", receivedData: req.body });
         }
     } catch (err) {
+        res.status(500).json({ message: "Internal Server Error", error: err.message });
+    }
+});
+
+// POST Login Route
+router.post("/login", async (req, res) => {
+    const { Username, Password } = req.body;
+    try {
+        const response = await login(Username, Password);
+        if (response.message === "Login successful") {
+            res.status(200).json(response);
+        } else {
+            res.status(401).json(response); // Unauthorized if invalid credentials
+        }
+    } catch (err) {
+        logger.error("Error during login:", err);
         res.status(500).json({ message: "Internal Server Error", error: err.message });
     }
 });

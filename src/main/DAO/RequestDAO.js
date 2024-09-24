@@ -27,6 +27,7 @@ const dynamoDbClient = new DynamoDBClient({
 
 const documentClient = DynamoDBDocumentClient.from(dynamoDbClient);
 const TableName = "RefundRequestData";
+const AccountTableName = "AccountData"; // Table for account data
 
 // Post Refund Request
 async function postRefundRequest(refundRequest) {
@@ -64,8 +65,8 @@ async function fetchRefundRequestsByAccountId(accountId) {
             RequestNumber: item.RequestNumber.S
         }));
 
-        console.log("Query result:", JSON.stringify(data, null, 2)); // Log the entire query result
-        return refundRequest || [];  // Return an empty array if Items is undefined
+        console.log("Query result:", JSON.stringify(data, null, 2));
+        return refundRequest || [];
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID:", err);
         throw err;
@@ -94,8 +95,8 @@ async function fetchPendingRefundRequests() {
             RequestNumber: item.RequestNumber.S
         }));
 
-        console.log("Scan result:", JSON.stringify(data, null, 2)); // Log the scan result
-        return pendingRequests || [];  // Return an empty array if Items is undefined
+        console.log("Scan result:", JSON.stringify(data, null, 2));
+        return pendingRequests || [];
     } catch (err) {
         logger.error("Error fetching pending refund requests:", err);
         throw err;
@@ -166,10 +167,30 @@ async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) 
     }
 }
 
+// Check Login Credentials
+async function login(username, password) {
+    const command = new ScanCommand({ // Use Scan instead of Query to check Username and Password
+        TableName: AccountTableName,
+        FilterExpression: "Username = :username AND Password = :password",
+        ExpressionAttributeValues: {
+            ":username": { S: username },
+            ":password": { S: password }
+        }
+    });
+    try {
+        const data = await documentClient.send(command);
+        return data.Items.length > 0; // Return true if credentials match
+    } catch (err) {
+        logger.error("Error checking login credentials:", err);
+        throw err;
+    }
+}
+
 module.exports = {
     postRefundRequest,
     fetchRefundRequestsByAccountId,
     fetchPendingRefundRequests,
-    fetchRefundRequestsByAccountIdAndStatus, // Export new function
-    fetchRefundRequestsByAccountIdExcludingStatus // Export new function
+    fetchRefundRequestsByAccountIdAndStatus,
+    fetchRefundRequestsByAccountIdExcludingStatus,
+    login // Export the login function
 };

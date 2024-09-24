@@ -36,6 +36,20 @@ async function getRefundRequestsByAccountId(accountId) {
     }
 }
 
+// Login Service Function
+async function login(username, password) {
+    try {
+        const isValid = await refundRequestDao.login(username, password);
+        if (isValid) {
+            return { message: "Login successful" };
+        }
+        return { message: "Invalid credentials" };
+    } catch (err) {
+        console.error("Error during login:", err.message);
+        throw new Error("Internal Server Error");
+    }
+}
+
 async function getPendingRefundRequests() {
     try {
         const data = await refundRequestDao.fetchPendingRefundRequests();
@@ -49,7 +63,6 @@ async function getPendingRefundRequests() {
     }
 }
 
-// Get Refund Requests by AccountID and Status
 async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
     try {
         const data = await refundRequestDao.fetchRefundRequestsByAccountIdAndStatus(accountId, status);
@@ -63,7 +76,6 @@ async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
     }
 }
 
-// Get Refund Requests by AccountID excluding a Status
 async function getRefundRequestsByAccountIdExcludingStatus(accountId, status) {
     try {
         const data = await refundRequestDao.fetchRefundRequestsByAccountIdExcludingStatus(accountId, status);
@@ -81,6 +93,7 @@ module.exports = {
     postRefundRequest,
     getRefundRequestsByAccountId,
     getPendingRefundRequests,
-    getRefundRequestsByAccountIdAndStatus, // Export new function
-    getRefundRequestsByAccountIdExcludingStatus // Export new function
+    getRefundRequestsByAccountIdAndStatus,
+    getRefundRequestsByAccountIdExcludingStatus,
+    login // Export the login function
 };
