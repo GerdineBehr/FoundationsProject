@@ -66,17 +66,28 @@ async function getRefundRequestsByAccountId(accountId) {
 }
 
 async function getPendingRefundRequests() {
+    console.log("Fetching all pending refund requests...");
+
     try {
         const data = await refundRequestDao.fetchPendingRefundRequests();
+
+        console.log("Raw data fetched from the database:", JSON.stringify(data, null, 2));
+
         if (!data || data.length === 0) {
-            throw new Error("No pending refund requests found");
+            console.log("No pending refund requests found.");
+            return []; // Return an empty array if no data is found
         }
+
+        console.log("Fetched pending refund requests:", JSON.stringify(data, null, 2));
         return data;
     } catch (err) {
         console.error("Error retrieving pending refund requests:", err.message);
-        throw new Error("Internal Server Error");
+        throw new Error("Error fetching pending refund requests from the database");
     }
 }
+
+
+
 
 async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
     try {

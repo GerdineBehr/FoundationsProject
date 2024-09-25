@@ -940,3 +940,60 @@
 2024-09-25T14:02:40.811Z [info]: Server is listening on port: 3000
 2024-09-25T14:02:47.517Z [info]: Incoming POST : /auth
 2024-09-25T14:03:13.453Z [info]: Incoming GET : /refundRequests?AccountID=1
+2024-09-25T14:14:55.920Z [info]: Server is listening on port: 3000
+2024-09-25T14:15:01.656Z [info]: Incoming POST : /auth
+2024-09-25T14:15:34.785Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-25T14:15:34.840Z [error]: Error fetching refund requests by AccountID excluding Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T14:15:34.842Z [error]: Error retrieving refund requests by excluding status: Error: Internal Server Error
+2024-09-25T14:15:49.474Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-25T14:15:49.496Z [error]: Error fetching refund requests by AccountID excluding Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T14:15:49.497Z [error]: Error retrieving refund requests by excluding status: Error: Internal Server Error
+2024-09-25T14:17:31.094Z [info]: Server is listening on port: 3000
+2024-09-25T14:19:03.328Z [info]: Incoming POST : /auth
+2024-09-25T14:19:19.871Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-25T14:19:19.967Z [error]: Error fetching refund requests by AccountID excluding Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T14:19:19.971Z [error]: Error retrieving refund requests by excluding status: Error: Internal Server Error
+2024-09-25T14:20:56.519Z [info]: Server is listening on port: 3000
+2024-09-25T14:20:58.803Z [info]: Incoming POST : /auth
+2024-09-25T14:21:27.782Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-25T14:21:27.860Z [error]: Error retrieving refund requests by excluding status: Error: Internal Server Error
+2024-09-25T14:23:43.713Z [info]: Server is listening on port: 3000
+2024-09-25T14:23:47.204Z [info]: Incoming POST : /auth
+2024-09-25T14:24:03.089Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-25T14:25:13.941Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-25T14:28:59.696Z [info]: Incoming POST : /auth
+2024-09-25T14:37:44.203Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T14:38:00.441Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T14:38:02.135Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T14:38:17.463Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T14:43:44.838Z [info]: Incoming POST : /auth
+2024-09-25T14:43:52.884Z [info]: Server is listening on port: 3000
+2024-09-25T14:43:55.932Z [info]: Incoming POST : /auth
+2024-09-25T14:44:11.940Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T14:44:11.977Z [error]: Error retrieving pending refund requests: Internal Server Error
+2024-09-25T15:01:44.052Z [info]: Server is listening on port: 3000
+2024-09-25T15:03:01.601Z [info]: Server is listening on port: 3000
+2024-09-25T15:04:52.073Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T15:04:52.104Z [error]: Error retrieving pending refund requests: ScanCommand is not defined
+2024-09-25T15:12:06.036Z [info]: Server is listening on port: 3000
+2024-09-25T15:12:19.754Z [info]: Incoming POST : /auth
+2024-09-25T15:12:56.920Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T15:12:56.954Z [error]: Error retrieving pending refund requests: Internal Server Error
+2024-09-25T15:28:01.680Z [info]: Server is listening on port: 3000
+2024-09-25T15:28:07.586Z [info]: Incoming POST : /auth
+2024-09-25T15:28:29.670Z [info]: Incoming GET : /refundRequests/pending
+2024-09-25T15:29:15.054Z [info]: Incoming GET : /refundRequests/Pending
+2024-09-25T15:29:17.273Z [info]: Incoming GET : /refundRequests/Pending
+2024-09-25T15:30:24.587Z [info]: Server is listening on port: 3000
+2024-09-25T15:30:48.141Z [info]: Incoming POST : /auth
+2024-09-25T15:31:09.524Z [info]: Incoming GET : /refundRequests/Pending
+2024-09-25T15:34:54.922Z [info]: Server is listening on port: 3000
+2024-09-25T15:34:57.396Z [info]: Incoming POST : /auth
+2024-09-25T15:35:09.705Z [info]: Incoming GET : /refundRequests/Pending
+2024-09-25T15:37:18.094Z [info]: Server is listening on port: 3000
+2024-09-25T15:37:20.821Z [info]: Incoming POST : /auth
+2024-09-25T15:37:36.024Z [info]: Incoming GET : /refundRequests/Pending
+2024-09-25T15:38:23.891Z [info]: Server is listening on port: 3000
+2024-09-25T15:38:50.362Z [info]: Server is listening on port: 3000
+2024-09-25T15:38:53.312Z [info]: Incoming POST : /auth
+2024-09-25T15:39:13.082Z [info]: Incoming GET : /refundRequests/Pending

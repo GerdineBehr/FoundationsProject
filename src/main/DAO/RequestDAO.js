@@ -95,10 +95,6 @@ async function fetchRefundRequestsByAccountId(accountId) {
 }
 
 
-
-
-
-
 // Get all pending refund requests
 async function fetchPendingRefundRequests() {
     console.log("Fetching all pending refund requests...");
@@ -110,29 +106,32 @@ async function fetchPendingRefundRequests() {
             '#status': 'Status'
         },
         ExpressionAttributeValues: {
-            ":status": { S: "Pending" }
+            ":status": "Pending"
         }
     });
+    
+    console.log("Generated ScanCommand for fetchPendingRefundRequests:");
+    console.log(JSON.stringify(command, null, 2));
+
     try {
         const data = await documentClient.send(command);
-        console.log("Raw scan result:", JSON.stringify(data, null, 2));
+        
+        console.log("Raw scan result from database:", JSON.stringify(data, null, 2));
 
         if (!data || !data.Items || data.Items.length === 0) {
-            console.log("No pending refund requests found.");
+            console.log("No pending refund requests found in the database.");
             return [];
         }
 
         return data.Items;
     } catch (err) {
-        logger.error("Error fetching pending refund requests:", err);
+        console.error("Error fetching pending refund requests:", err);
         throw err;
     }
 }
 
-// Get Refund Requests by AccountID and Status
-// RequestDAO.js
 
-// RequestDAO.js
+// Get Refund Requests by AccountID and Status
 
 async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
     logger.info(`Fetching refund requests for AccountID: ${accountId} and Status: ${status}`);
@@ -177,30 +176,39 @@ async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) 
     const command = new QueryCommand({
         TableName,
         KeyConditionExpression: "AccountID = :accountId",
-        FilterExpression: "NOT #status = :status",
+        FilterExpression: "#status <> :status",
         ExpressionAttributeNames: {
             "#status": "Status"
         },
         ExpressionAttributeValues: {
-            ":accountId": { S: accountId },
-            ":status": { S: status }
+            ":accountId": accountId, // AccountID as string
+            ":status": status // Status as string
         }
     });
+
     try {
+        console.log("Generated QueryCommand for fetchRefundRequestsByAccountIdExcludingStatus:");
+        console.log(JSON.stringify(command, null, 2));
         const data = await documentClient.send(command);
         console.log("Raw query result excluding status:", JSON.stringify(data, null, 2));
 
-        if (!data || !data.Items || data.Items.length === 0) {
-            console.log(`No refund requests found for AccountID: ${accountId} excluding Status: ${status}`);
-            return [];
+        // Check if Items array exists and is not empty
+        if (data.Items && data.Items.length > 0) {
+            return data.Items;
+        } else {
+            // Return an empty array with a message if no items are found
+            return {
+                message: `No refund requests found for AccountID: ${accountId} excluding Status: ${status}`,
+                Items: []
+            };
         }
-
-        return data.Items;
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID excluding Status:", err);
         throw err;
     }
 }
+
+
 
 // Update Refund Request Status
 async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {

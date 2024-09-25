@@ -57,13 +57,13 @@ router.get("/pending", authenticateJWT, checkRole("Manager"), async (req, res) =
         const pendingRequests = await getPendingRefundRequests();
         console.log("Fetched pending refund requests:", pendingRequests);
 
-        if (!pendingRequests || pendingRequests.length === 0) {
-            return res.status(404).json({ message: "No pending refund requests found." });
+        if (pendingRequests.length === 0) {
+            return res.status(200).json({ message: "No pending refund requests found." });
         }
 
         res.status(200).json(pendingRequests);
     } catch (err) {
-        logger.error("Error retrieving pending refund requests:", err);
+        console.error("Error retrieving pending refund requests:", err.message);
         res.status(500).json({ message: "Internal Server Error", error: err.message });
     }
 });
