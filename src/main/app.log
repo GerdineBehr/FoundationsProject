@@ -1005,3 +1005,12 @@
 2024-09-25T16:00:22.654Z [info]: Server is listening on port: 3000
 2024-09-25T16:00:26.239Z [info]: Incoming POST : /auth
 2024-09-25T16:00:49.841Z [info]: Incoming PUT : /refundRequests/updateStatus
+2024-09-25T16:22:30.348Z [info]: Server is listening on port: 3000
+2024-09-25T16:22:32.636Z [info]: Incoming POST : /auth
+2024-09-25T16:29:35.009Z [info]: Server is listening on port: 3000
+2024-09-25T16:30:56.447Z [info]: Incoming POST : /accounts
+2024-09-25T16:54:34.969Z [info]: Server is listening on port: 3000
+2024-09-25T16:55:02.736Z [info]: Incoming POST : /accounts
+2024-09-25T17:10:41.220Z [info]: Server is listening on port: 3000
+2024-09-25T17:10:53.604Z [info]: Incoming POST : /accounts
+2024-09-25T17:12:03.301Z [info]: Incoming POST : /accounts
