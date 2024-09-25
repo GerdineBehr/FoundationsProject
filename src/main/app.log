@@ -693,3 +693,168 @@
 2024-09-24T19:51:33.151Z [info]:  Incoming GET : /refundRequests?AccountID=1
 2024-09-24T19:51:43.954Z [info]:  Incoming GET : /refundRequests?AccountID=1
 2024-09-24T19:54:12.302Z [info]:  Incoming GET : /refundRequests?AccountID=1&Username=User1
+2024-09-24T20:05:15.412Z [info]: Server is listening on port: 3000
+2024-09-24T20:43:49.161Z [info]: Server is listening on port: 3000
+2024-09-24T20:49:22.594Z [info]:  Incoming GET : /login
+2024-09-24T20:49:31.068Z [info]:  Incoming GET : /login
+2024-09-24T20:50:41.937Z [info]:  Incoming POST : /login
+2024-09-24T20:51:03.134Z [info]:  Incoming POST : /login
+2024-09-24T20:51:07.589Z [info]:  Incoming POST : /login
+2024-09-24T20:51:10.307Z [info]:  Incoming POST : /login
+2024-09-24T20:53:33.530Z [info]: Server is listening on port: 3000
+2024-09-24T20:53:36.526Z [info]:  Incoming POST : /login
+2024-09-24T20:55:34.673Z [info]:  Incoming POST : /refundRequests/login
+2024-09-24T20:55:34.680Z [error]: Error during login: isValid is not defined
+2024-09-24T21:05:13.852Z [info]: Server is listening on port: 3000
+2024-09-24T21:05:37.362Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:36:32.783Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:38:22.456Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:41:02.209Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:42:36.442Z [info]:  Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T00:42:49.450Z [info]:  Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T00:42:53.497Z [info]:  Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T00:44:28.993Z [info]:  Incoming POST : /refundRequests
+2024-09-25T00:44:44.100Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:47:03.887Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:50:33.341Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:51:05.057Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:53:14.734Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:53:14.966Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T00:53:14.990Z [error]: Error during login: Internal Server Error
+2024-09-25T00:53:31.027Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:54:04.519Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:56:58.483Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:57:30.450Z [info]: Server is listening on port: 3000
+2024-09-25T00:57:36.202Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T00:58:44.996Z [info]:  Incoming GET : /refundRequests/login
+2024-09-25T00:59:00.375Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T00:59:42.329Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T01:01:48.083Z [info]: Server is listening on port: 3000
+2024-09-25T01:01:56.148Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T01:02:27.243Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T01:07:59.108Z [info]: Server is listening on port: 3000
+2024-09-25T01:08:07.837Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T01:08:50.193Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T01:09:08.030Z [info]: Server is listening on port: 3000
+2024-09-25T01:09:36.214Z [info]: Server is listening on port: 3000
+2024-09-25T01:10:09.072Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T01:10:30.023Z [info]:  Incoming GET : /refundRequests?AccountID=1
+2024-09-25T01:20:19.815Z [info]: Server is listening on port: 3000
+2024-09-25T01:20:26.433Z [info]:  Incoming POST : /refundRequests/login
+2024-09-25T01:23:09.907Z [info]: Server is listening on port: 3000
+2024-09-25T01:29:00.057Z [info]: Server is listening on port: 3000
+2024-09-25T01:30:33.794Z [info]: Server is listening on port: 3000
+2024-09-25T01:32:06.926Z [info]: Server is listening on port: 3000
+2024-09-25T01:33:26.874Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T01:33:26.897Z [error]: Error during login: Internal Server Error
+2024-09-25T01:53:41.216Z [info]: Server is listening on port: 3000
+2024-09-25T01:53:52.235Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T01:53:52.250Z [error]: Error during login: Internal Server Error
+2024-09-25T01:58:30.514Z [info]: Server is listening on port: 3000
+2024-09-25T01:58:36.518Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T01:58:36.526Z [error]: Error during login: Internal Server Error
+2024-09-25T01:59:04.346Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T01:59:04.348Z [error]: Error during login: Internal Server Error
+2024-09-25T01:59:11.850Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T01:59:11.851Z [error]: Error during login: Internal Server Error
+2024-09-25T02:00:40.286Z [info]: Server is listening on port: 3000
+2024-09-25T02:00:43.776Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T02:00:43.902Z [error]: Error during login: Internal Server Error
+2024-09-25T02:03:07.961Z [info]: Server is listening on port: 3000
+2024-09-25T02:03:12.946Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:04:38.180Z [info]: Server is listening on port: 3000
+2024-09-25T02:04:41.317Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:06:17.534Z [info]: Server is listening on port: 3000
+2024-09-25T02:06:23.361Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:14:28.696Z [info]: Server is listening on port: 3000
+2024-09-25T02:17:50.640Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:21:12.158Z [info]: Server is listening on port: 3000
+2024-09-25T02:21:27.618Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:23:55.725Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:24:07.149Z [info]: Server is listening on port: 3000
+2024-09-25T02:24:08.238Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:25:10.328Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:26:44.014Z [info]: Server is listening on port: 3000
+2024-09-25T02:26:45.969Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T02:40:50.559Z [info]: Server is listening on port: 3000
+2024-09-25T02:41:06.353Z [info]: Incoming POST : /login
+2024-09-25T02:41:06.423Z [error]: Error checking login credentials: Cannot read properties of undefined (reading 'S')
+2024-09-25T02:41:06.426Z [error]: Error during login: Internal Server Error
+2024-09-25T02:41:26.316Z [info]: Incoming POST : /refundRequest/login
+2024-09-25T02:41:34.926Z [info]: Incoming POST : /refundRequest/Login
+2024-09-25T02:58:39.980Z [info]: Server is listening on port: 3000
+2024-09-25T02:58:45.725Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:03:35.111Z [info]: Server is listening on port: 3000
+2024-09-25T03:03:40.235Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:09:37.611Z [info]: Server is listening on port: 3000
+2024-09-25T03:09:42.871Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:09:45.091Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:10:01.015Z [info]: Server is listening on port: 3000
+2024-09-25T03:10:02.637Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:10:11.111Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:11:45.131Z [info]: Incoming POST : /auth
+2024-09-25T03:11:45.215Z [error]: Error checking login credentials: Cannot read properties of undefined (reading 'S')
+2024-09-25T03:11:45.230Z [error]: Error during login: Internal Server Error
+2024-09-25T03:18:20.188Z [info]: Server is listening on port: 3000
+2024-09-25T03:18:23.209Z [info]: Incoming POST : /auth
+2024-09-25T03:18:23.257Z [error]: Error checking login credentials: Cannot read properties of undefined (reading '0')
+2024-09-25T03:18:23.261Z [error]: Error during login: Internal Server Error
+2024-09-25T03:20:19.614Z [info]: Server is listening on port: 3000
+2024-09-25T03:20:24.435Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:20:29.484Z [info]: Incoming POST : /auth
+2024-09-25T03:20:29.490Z [error]: Error during login: Username and Password are required
+2024-09-25T03:24:57.854Z [info]: Server is listening on port: 3000
+2024-09-25T03:25:11.065Z [info]: Incoming POST : /auth
+2024-09-25T03:27:18.968Z [info]: Incoming POST : /auth
+2024-09-25T03:27:19.022Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:27:23.264Z [info]: Incoming POST : /auth
+2024-09-25T03:27:23.266Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:30:53.844Z [info]: Server is listening on port: 3000
+2024-09-25T03:31:01.265Z [info]: Incoming POST : /auth
+2024-09-25T03:31:01.305Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:34:46.165Z [info]: Server is listening on port: 3000
+2024-09-25T03:34:51.047Z [info]: Incoming POST : /auth
+2024-09-25T03:34:51.089Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:37:08.014Z [info]: Server is listening on port: 3000
+2024-09-25T03:37:11.903Z [info]: Incoming POST : /auth
+2024-09-25T03:37:11.952Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:38:15.330Z [info]: Incoming POST : /auth
+2024-09-25T03:38:15.333Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:43:16.980Z [info]: Server is listening on port: 3000
+2024-09-25T03:43:22.350Z [info]: Incoming POST : /auth
+2024-09-25T03:43:22.399Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:45:53.990Z [info]: Server is listening on port: 3000
+2024-09-25T03:45:56.255Z [info]: Incoming POST : /auth
+2024-09-25T03:45:56.355Z [error]: Error during login: ScanCommand is not defined
+2024-09-25T03:51:48.294Z [info]: Server is listening on port: 3000
+2024-09-25T03:51:55.125Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T03:52:04.228Z [info]: Incoming POST : /auth
+2024-09-25T03:54:02.464Z [info]: Incoming POST : /auth
+2024-09-25T03:54:30.971Z [info]: Incoming POST : /auth
+2024-09-25T04:00:16.820Z [info]: Server is listening on port: 3000
+2024-09-25T04:00:18.194Z [info]: Incoming POST : /auth
+2024-09-25T04:00:18.515Z [error]: Error fetching user role: User not found
+2024-09-25T04:00:18.516Z [error]: Error during login: Internal Server Error
+2024-09-25T04:00:21.133Z [info]: Incoming POST : /auth
+2024-09-25T04:00:21.198Z [error]: Error fetching user role: User not found
+2024-09-25T04:00:21.199Z [error]: Error during login: Internal Server Error
+2024-09-25T04:06:30.970Z [info]: Server is listening on port: 3000
+2024-09-25T04:06:36.917Z [info]: Incoming POST : /auth
+2024-09-25T04:06:37.213Z [error]: Error fetching user role: User not found
+2024-09-25T04:06:37.215Z [error]: Error during login: Internal Server Error
+2024-09-25T04:10:56.028Z [info]: Server is listening on port: 3000
+2024-09-25T04:11:01.176Z [info]: Incoming POST : /auth
+2024-09-25T04:11:01.675Z [error]: Error fetching user role: User not found
+2024-09-25T04:11:01.677Z [error]: Error during login: Internal Server Error
+2024-09-25T04:14:27.016Z [info]: Server is listening on port: 3000
+2024-09-25T04:14:33.677Z [info]: Incoming POST : /auth
+2024-09-25T04:14:33.962Z [error]: Error fetching user role: User not found
+2024-09-25T04:14:33.965Z [error]: Error during login: Internal Server Error
+2024-09-25T04:16:01.667Z [info]: Incoming POST : /auth
+2024-09-25T04:16:01.824Z [error]: Error fetching user role: User not found
+2024-09-25T04:16:01.827Z [error]: Error during login: Internal Server Error
+2024-09-25T04:18:23.180Z [info]: Server is listening on port: 3000
+2024-09-25T04:18:30.921Z [info]: Incoming POST : /auth
+2024-09-25T04:21:59.762Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T04:21:59.910Z [error]: Error fetching refund requests by AccountID and Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T04:21:59.911Z [error]: Error retrieving refund requests by status: Error: Internal Server Error

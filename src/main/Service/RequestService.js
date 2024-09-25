@@ -1,5 +1,37 @@
-const refundRequestDao = require("../DAO/RequestDAO");
+// RequestService.js
+const refundRequestDao = require('../DAO/RequestDAO');
+const jwt = require('jsonwebtoken');
 const uuid = require("uuid");
+require('dotenv').config();
+
+async function login(username, password) {
+    if (!username || !password) { // Check if username or password is missing
+        throw new Error("Username and Password are required");
+    }
+ 
+    console.log(`Checking login credentials for Username: ${username} and Password: ${password}`);
+ 
+    try {
+        const isValid = await refundRequestDao.login(username, password);
+        if (isValid) {
+            const role = await refundRequestDao.fetchUserRole(username);
+            console.log(`User role for ${username} is ${role}`);
+            const token = jwt.sign(
+                { username: username, role: role },
+                process.env.JWT_SECRET,
+                { expiresIn: '1h' } // Token expires in 1 hour
+            );
+            return { message: "Login successful", token: token };
+        } else {
+            return { message: "Invalid credentials" };
+        }
+    } catch (err) {
+        console.error("Error during login:", err.message);
+        throw new Error("Internal Server Error");
+    }
+ }
+ 
+
 
 async function postRefundRequest(refundRequest) {
     if (validateRefundRequest(refundRequest)) {
@@ -25,7 +57,6 @@ function validateRefundRequest(refundRequest) {
 async function getRefundRequestsByAccountId(accountId) {
     try {
         const data = await refundRequestDao.fetchRefundRequestsByAccountId(accountId);
-        console.log(data);
         if (!data || data.length === 0) {
             throw new Error("No refund requests found for this account");
         }
@@ -33,30 +64,6 @@ async function getRefundRequestsByAccountId(accountId) {
     } catch (err) {
         console.error("Error retrieving refund requests:", err.message);
         throw new Error(err.message || "Internal Server Error");
-    }
-}
-
-async function getUserRole(username) {
-    try {
-        const role = await refundRequestDao.fetchUserRole(username);
-        return role;
-    } catch (err) {
-        console.error(`Error fetching user role for ${username}: ${err.message}`);
-        throw new Error(err.message || "Internal Server Error");
-    }
-}
-
-// Login Service Function
-async function login(username, password) {
-    try {
-        const isValid = await refundRequestDao.login(username, password);
-        if (isValid) {
-            return { message: "Login successful" };
-        }
-        return { message: "Invalid credentials" };
-    } catch (err) {
-        console.error("Error during login:", err.message);
-        throw new Error("Internal Server Error");
     }
 }
 
@@ -69,7 +76,7 @@ async function getPendingRefundRequests() {
         return data;
     } catch (err) {
         console.error("Error retrieving pending refund requests:", err.message);
-        throw new Error(err.message || "Internal Server Error");
+        throw new Error("Internal Server Error");
     }
 }
 
@@ -82,7 +89,7 @@ async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
         return data;
     } catch (err) {
         console.error(`Error retrieving refund requests by AccountID and Status: ${err.message}`);
-        throw new Error(err.message || "Internal Server Error");
+        throw new Error("Internal Server Error");
     }
 }
 
@@ -95,7 +102,7 @@ async function getRefundRequestsByAccountIdExcludingStatus(accountId, status) {
         return data;
     } catch (err) {
         console.error(`Error retrieving refund requests by AccountID excluding Status: ${err.message}`);
-        throw new Error(err.message || "Internal Server Error");
+        throw new Error("Internal Server Error");
     }
 }
 
@@ -108,17 +115,27 @@ async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
         return updatedRequest;
     } catch (err) {
         console.error(`Error updating refund request status: ${err.message}`);
-        throw new Error(err.message || "Internal Server Error");
+        throw new Error("Internal Server Error");
+    }
+}
+
+async function getUserRole(username) {
+    try {
+        const role = await refundRequestDao.fetchUserRole(username);
+        return role;
+    } catch (err) {
+        console.error(`Error fetching user role for ${username}: ${err.message}`);
+        throw new Error("Internal Server Error");
     }
 }
 
 module.exports = {
+    login,
     postRefundRequest,
     getRefundRequestsByAccountId,
     getPendingRefundRequests,
     getRefundRequestsByAccountIdAndStatus,
     getRefundRequestsByAccountIdExcludingStatus,
     updateRefundRequestStatus,
-    login,
-    getUserRole // Export the function
+    getUserRole
 };

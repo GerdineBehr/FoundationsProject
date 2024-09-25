@@ -1,5 +1,11 @@
-const { DynamoDBClient, QueryCommand, ScanCommand } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand, UpdateCommand } = require("@aws-sdk/lib-dynamodb");
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { 
+    DynamoDBDocumentClient, 
+    PutCommand, 
+    QueryCommand, 
+    ScanCommand, 
+    UpdateCommand 
+} = require("@aws-sdk/lib-dynamodb");
 const { createLogger, transports, format } = require('winston');
 const uuid = require("uuid");
 require('dotenv').config();
@@ -32,13 +38,13 @@ const AccountTableName = "AccountData"; // Table for account data
 
 // Post Refund Request
 async function postRefundRequest(refundRequest) {
-    console.log("Refund Request Received:", refundRequest); // Log the input data
+    console.log("Refund Request Received:", refundRequest);
 
     const command = new PutCommand({
         TableName, 
         Item: {
-            AccountID: refundRequest.AccountID, // Provide value directly
-            Amount: refundRequest.Amount,       // Provide value directly
+            AccountID: refundRequest.AccountID,
+            Amount: refundRequest.Amount,
             Description: refundRequest.Description,
             Status: refundRequest.Status || "Pending",
             RequestNumber: refundRequest.RequestNumber || uuid.v4()
@@ -46,7 +52,7 @@ async function postRefundRequest(refundRequest) {
     });
     try {
         const data = await documentClient.send(command);
-        console.log("Successfully added refund request:", data); // Log success
+        console.log("Successfully added refund request:", data);
         return data;
     } catch (err) {
         logger.error("Error in postRefundRequest:", err);
@@ -57,7 +63,7 @@ async function postRefundRequest(refundRequest) {
 
 // Get Refund Requests by AccountID
 async function fetchRefundRequestsByAccountId(accountId) {
-    console.log("Fetching refund requests for AccountID:", accountId); // Log the input data
+    console.log("Fetching refund requests for AccountID:", accountId);
 
     const command = new QueryCommand({
         TableName,
@@ -68,32 +74,23 @@ async function fetchRefundRequestsByAccountId(accountId) {
     });
     try {
         const data = await documentClient.send(command);
-        console.log("Raw query result:", JSON.stringify(data, null, 2)); // Log the raw query result
+        console.log("Raw query result:", JSON.stringify(data, null, 2));
 
-        if (!data || !data.Items || data.Items.length === 0) { // Check if data.Items is defined and has elements
+        if (!data || !data.Items || data.Items.length === 0) {
             console.log("No refund requests found for AccountID:", accountId);
-            return []; // Return an empty array if no items found
+            return [];
         }
 
-        const refundRequest = data.Items.map((item) => ({
-            AccountID: item.AccountID.S,
-            Amount: item.Amount.N,
-            Description: item.Description.S,
-            Status: item.Status.S,
-            RequestNumber: item.RequestNumber.S
-        }));
-
-        console.log("Formatted query result:", JSON.stringify(refundRequest, null, 2));
-        return refundRequest;
+        return data.Items;
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID:", err);
         throw err;
     }
 }
 
-// Get all pending refund requests (Scan with filter)
+// Get all pending refund requests
 async function fetchPendingRefundRequests() {
-    console.log("Fetching all pending refund requests..."); // Log the operation
+    console.log("Fetching all pending refund requests...");
 
     const command = new ScanCommand({
         TableName,
@@ -107,23 +104,14 @@ async function fetchPendingRefundRequests() {
     });
     try {
         const data = await documentClient.send(command);
-        console.log("Raw scan result:", JSON.stringify(data, null, 2)); // Log the raw scan result
+        console.log("Raw scan result:", JSON.stringify(data, null, 2));
 
-        if (!data || !data.Items || data.Items.length === 0) { // Check if data.Items is defined and has elements
+        if (!data || !data.Items || data.Items.length === 0) {
             console.log("No pending refund requests found.");
-            return []; // Return an empty array if no items found
+            return [];
         }
 
-        const pendingRequests = data.Items.map((item) => ({
-            AccountID: item.AccountID.S,
-            Amount: item.Amount.N,
-            Description: item.Description.S,
-            Status: item.Status.S,
-            RequestNumber: item.RequestNumber.S
-        }));
-
-        console.log("Formatted scan result:", JSON.stringify(pendingRequests, null, 2));
-        return pendingRequests;
+        return data.Items;
     } catch (err) {
         logger.error("Error fetching pending refund requests:", err);
         throw err;
@@ -132,7 +120,7 @@ async function fetchPendingRefundRequests() {
 
 // Get Refund Requests by AccountID and Status
 async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
-    console.log(`Fetching refund requests for AccountID: ${accountId} and Status: ${status}`); // Log the input data
+    console.log(`Fetching refund requests for AccountID: ${accountId} and Status: ${status}`);
 
     const command = new QueryCommand({
         TableName,
@@ -148,23 +136,14 @@ async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
     });
     try {
         const data = await documentClient.send(command);
-        console.log("Raw query result by status:", JSON.stringify(data, null, 2)); // Log the raw query result
+        console.log("Raw query result by status:", JSON.stringify(data, null, 2));
 
-        if (!data || !data.Items || data.Items.length === 0) { // Check if data.Items is defined and has elements
+        if (!data || !data.Items || data.Items.length === 0) {
             console.log(`No refund requests found for AccountID: ${accountId} and Status: ${status}`);
-            return []; // Return an empty array if no items found
+            return [];
         }
 
-        const refundRequests = data.Items.map((item) => ({
-            AccountID: item.AccountID.S,
-            Amount: item.Amount.N,
-            Description: item.Description.S,
-            Status: item.Status.S,
-            RequestNumber: item.RequestNumber.S
-        }));
-
-        console.log("Formatted query result by status:", JSON.stringify(refundRequests, null, 2));
-        return refundRequests;
+        return data.Items;
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID and Status:", err);
         throw err;
@@ -173,7 +152,7 @@ async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
 
 // Get Refund Requests by AccountID excluding a Status
 async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) {
-    console.log(`Fetching refund requests for AccountID: ${accountId} excluding Status: ${status}`); // Log the input data
+    console.log(`Fetching refund requests for AccountID: ${accountId} excluding Status: ${status}`);
 
     const command = new QueryCommand({
         TableName,
@@ -189,23 +168,14 @@ async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) 
     });
     try {
         const data = await documentClient.send(command);
-        console.log("Raw query result excluding status:", JSON.stringify(data, null, 2)); // Log the raw query result
+        console.log("Raw query result excluding status:", JSON.stringify(data, null, 2));
 
-        if (!data || !data.Items || data.Items.length === 0) { // Check if data.Items is defined and has elements
+        if (!data || !data.Items || data.Items.length === 0) {
             console.log(`No refund requests found for AccountID: ${accountId} excluding Status: ${status}`);
-            return []; // Return an empty array if no items found
+            return [];
         }
 
-        const refundRequests = data.Items.map((item) => ({
-            AccountID: item.AccountID.S,
-            Amount: item.Amount.N,
-            Description: item.Description.S,
-            Status: item.Status.S,
-            RequestNumber: item.RequestNumber.S
-        }));
-
-        console.log("Formatted query result excluding status:", JSON.stringify(refundRequests, null, 2));
-        return refundRequests;
+        return data.Items;
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID excluding Status:", err);
         throw err;
@@ -214,30 +184,30 @@ async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) 
 
 // Update Refund Request Status
 async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
-    console.log(`Updating refund request status for AccountID: ${accountId}, RequestNumber: ${requestNumber} to Status: ${newStatus}`); // Log the input data
+    console.log(`Updating refund request status for AccountID: ${accountId}, RequestNumber: ${requestNumber} to Status: ${newStatus}`);
 
     const command = new UpdateCommand({
         TableName,
         Key: {
-            AccountID: { S: accountId }, // Convert to DynamoDB format
-            RequestNumber: { S: requestNumber } // Convert to DynamoDB format
+            AccountID: { S: accountId },
+            RequestNumber: { S: requestNumber }
         },
         UpdateExpression: "set #status = :newStatus",
-        ConditionExpression: "#status = :pendingStatus", // Only update if the current status is "Pending"
+        ConditionExpression: "#status = :pendingStatus",
         ExpressionAttributeNames: {
             "#status": "Status"
         },
         ExpressionAttributeValues: {
             ":newStatus": { S: newStatus },
-            ":pendingStatus": { S: "Pending" } // Condition to ensure it only updates pending requests
+            ":pendingStatus": { S: "Pending" }
         },
         ReturnValues: "UPDATED_NEW"
     });
     
     try {
         const data = await documentClient.send(command);
-        console.log("Successfully updated refund request status:", data); // Log success
-        return data.Attributes; // Return updated attributes
+        console.log("Successfully updated refund request status:", data);
+        return data.Attributes;
     } catch (err) {
         logger.error("Error updating refund request status:", err);
         console.error("Error details:", err);
@@ -247,39 +217,39 @@ async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
 
 // Check Login Credentials
 async function login(username, password) {
-    console.log(`Checking login credentials for Username: ${username}`); // Log the input data
-
+    console.log(`Checking login credentials for Username: ${username}`);
+ 
     const command = new ScanCommand({
         TableName: AccountTableName,
         FilterExpression: "#username = :username AND #password = :password",
         ExpressionAttributeNames: {
-            "#username": "Username", 
+            "#username": "Username",
             "#password": "Password"
         },
         ExpressionAttributeValues: {
-            ":username": { S: username },
-            ":password": { S: password }
+            ":username": username,
+            ":password": password
         }
     });
+ 
     try {
         const data = await documentClient.send(command);
-        console.log("Raw login result:", JSON.stringify(data, null, 2)); // Log the raw result
-
-        if (!data || !data.Items || data.Items.length === 0) {
+        console.log("Raw login result:", JSON.stringify(data, null, 2));
+ 
+        if (data.Items && data.Items.length > 0) {
+            return true;
+        } else {
             console.log("Invalid login credentials.");
-            return false; // Return false if no matching items found
+            return false;
         }
-
-        return data.Items.length > 0; // Return true if credentials match
     } catch (err) {
         logger.error("Error checking login credentials:", err);
         throw err;
     }
-}
+ }
 
 // Get User Role by Username
 async function fetchUserRole(username) {
-    // Add this error check
     if (!username) {
         throw new Error("Username is undefined");
     }
@@ -293,23 +263,26 @@ async function fetchUserRole(username) {
             "#username": "Username"
         },
         ExpressionAttributeValues: {
-            ":username": { S: username }
+            ":username": username
         }
     });
+
     try {
         const data = await documentClient.send(command);
         console.log("Raw user role result:", JSON.stringify(data, null, 2)); // Log the raw result
 
         if (!data || !data.Items || data.Items.length === 0) {
+            console.error("User not found:", username);
             throw new Error("User not found");
         }
 
-        return data.Items[0].Role.S; // Assuming Role is stored in the table
+        return data.Items[0].Role; // Assuming Role is stored in the table and is not nested
     } catch (err) {
         logger.error("Error fetching user role:", err);
         throw err;
     }
 }
+
 
 module.exports = {
     postRefundRequest,
@@ -319,5 +292,5 @@ module.exports = {
     fetchRefundRequestsByAccountIdExcludingStatus,
     updateRefundRequestStatus,
     login,
-    fetchUserRole // Export the function
+    fetchUserRole
 };
