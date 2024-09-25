@@ -119,8 +119,12 @@ async function fetchPendingRefundRequests() {
 }
 
 // Get Refund Requests by AccountID and Status
+// RequestDAO.js
+
+// RequestDAO.js
+
 async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
-    console.log(`Fetching refund requests for AccountID: ${accountId} and Status: ${status}`);
+    logger.info(`Fetching refund requests for AccountID: ${accountId} and Status: ${status}`);
 
     const command = new QueryCommand({
         TableName,
@@ -130,25 +134,30 @@ async function fetchRefundRequestsByAccountIdAndStatus(accountId, status) {
             "#status": "Status"
         },
         ExpressionAttributeValues: {
-            ":accountId": { S: accountId },
-            ":status": { S: status }
+            ":accountId": accountId.toString(),  // Ensuring accountId is a string
+            ":status": status.toString()         // Ensuring status is a string
         }
     });
+
+    logger.info("Generated QueryCommand for fetchRefundRequestsByAccountIdAndStatus:", JSON.stringify(command, null, 2));
+
     try {
         const data = await documentClient.send(command);
-        console.log("Raw query result by status:", JSON.stringify(data, null, 2));
+        logger.info("Raw query result by AccountID and Status:", JSON.stringify(data, null, 2));
 
         if (!data || !data.Items || data.Items.length === 0) {
-            console.log(`No refund requests found for AccountID: ${accountId} and Status: ${status}`);
+            logger.warn(`No refund requests found for AccountID: ${accountId} and Status: ${status}`);
             return [];
         }
 
         return data.Items;
     } catch (err) {
         logger.error("Error fetching refund requests by AccountID and Status:", err);
+        logger.error("Failed command details:", JSON.stringify(command, null, 2));
         throw err;
     }
 }
+
 
 // Get Refund Requests by AccountID excluding a Status
 async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) {

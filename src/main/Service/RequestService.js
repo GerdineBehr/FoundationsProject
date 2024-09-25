@@ -5,17 +5,14 @@ const uuid = require("uuid");
 require('dotenv').config();
 
 async function login(username, password) {
-    if (!username || !password) { // Check if username or password is missing
+    if (!username || !password) {
         throw new Error("Username and Password are required");
     }
- 
-    console.log(`Checking login credentials for Username: ${username} and Password: ${password}`);
- 
+
     try {
         const isValid = await refundRequestDao.login(username, password);
         if (isValid) {
             const role = await refundRequestDao.fetchUserRole(username);
-            console.log(`User role for ${username} is ${role}`);
             const token = jwt.sign(
                 { username: username, role: role },
                 process.env.JWT_SECRET,
@@ -29,7 +26,8 @@ async function login(username, password) {
         console.error("Error during login:", err.message);
         throw new Error("Internal Server Error");
     }
- }
+}
+
  
 
 

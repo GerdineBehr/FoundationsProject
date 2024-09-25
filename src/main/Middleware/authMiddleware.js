@@ -10,15 +10,18 @@ function authenticateJWT(req, res, next) {
 
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => { // Verify the token using your secret
             if (err) {
-                return res.status(403).json({ message: "Forbidden: Invalid token" });
+                console.error("JWT Verification Error:", err); // Log the error for more details
+                return res.status(403).json({ message: "Forbidden: Invalid token", error: err.message });
             }
             req.user = user; // Store user information in the request object
             next(); // Proceed to the next middleware/route handler
         });
     } else {
+        console.error("JWT Token Error: No token provided"); // Log missing token error
         return res.status(401).json({ message: "Unauthorized: No token provided" });
     }
 }
+
 
 // Middleware for checking the user's role
 function checkRole(role) {

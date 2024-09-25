@@ -858,3 +858,34 @@
 2024-09-25T04:21:59.762Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
 2024-09-25T04:21:59.910Z [error]: Error fetching refund requests by AccountID and Status: One or more parameter values were invalid: Condition parameter type does not match schema type
 2024-09-25T04:21:59.911Z [error]: Error retrieving refund requests by status: Error: Internal Server Error
+2024-09-25T04:27:17.690Z [info]: Server is listening on port: 3000
+2024-09-25T04:27:37.817Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T04:27:53.409Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T04:28:01.084Z [info]: Incoming POST : /refundRequests/login
+2024-09-25T04:28:38.729Z [info]: Incoming POST : /auth
+2024-09-25T04:30:22.420Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T04:30:22.538Z [error]: Error fetching refund requests by AccountID and Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T04:30:22.540Z [error]: Error retrieving refund requests by status: Error: Internal Server Error
+2024-09-25T04:30:32.629Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T04:30:32.714Z [error]: Error fetching refund requests by AccountID and Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T04:30:32.715Z [error]: Error retrieving refund requests by status: Error: Internal Server Error
+2024-09-25T04:34:01.319Z [info]: Server is listening on port: 3000
+2024-09-25T04:34:05.284Z [info]: Incoming POST : /auth
+2024-09-25T04:34:23.463Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T04:34:23.530Z [error]: Error fetching refund requests by AccountID and Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T04:34:23.532Z [error]: Error retrieving refund requests by status: Error: Internal Server Error
+2024-09-25T13:21:38.422Z [info]: Server is listening on port: 3000
+2024-09-25T13:22:13.128Z [info]: Server is listening on port: 3000
+2024-09-25T13:22:26.939Z [info]: Incoming POST : /auth
+2024-09-25T13:22:47.113Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T13:22:47.135Z [info]: Fetching refund requests for AccountID: 1 and Status: Pending
+2024-09-25T13:22:47.136Z [info]: Generated QueryCommand for fetchRefundRequestsByAccountIdAndStatus:
+2024-09-25T13:22:47.167Z [error]: Error fetching refund requests by AccountID and Status: One or more parameter values were invalid: Condition parameter type does not match schema type
+2024-09-25T13:22:47.172Z [error]: Error retrieving refund requests by status: Error: Internal Server Error
+2024-09-25T13:22:47.169Z [error]: Failed command details:
+2024-09-25T13:25:39.406Z [info]: Server is listening on port: 3000
+2024-09-25T13:26:00.233Z [info]: Incoming POST : /auth
+2024-09-25T13:26:29.418Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-25T13:26:29.423Z [info]: Fetching refund requests for AccountID: 1 and Status: Pending
+2024-09-25T13:26:29.439Z [info]: Generated QueryCommand for fetchRefundRequestsByAccountIdAndStatus:
+2024-09-25T13:26:29.474Z [info]: Raw query result by AccountID and Status:
