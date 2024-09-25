@@ -214,11 +214,12 @@ async function fetchRefundRequestsByAccountIdExcludingStatus(accountId, status) 
 async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
     console.log(`Updating refund request status for AccountID: ${accountId}, RequestNumber: ${requestNumber} to Status: ${newStatus}`);
 
+    // Ensure that AccountID and RequestNumber are provided as strings to match the schema
     const command = new UpdateCommand({
-        TableName,
+        TableName: TableName,
         Key: {
-            AccountID: { S: accountId },
-            RequestNumber: { S: requestNumber }
+            "AccountID": accountId, // If AccountID is a string in your table, no need to use { S: accountId }
+            "RequestNumber": requestNumber // If RequestNumber is a string in your table, no need to use { S: requestNumber }
         },
         UpdateExpression: "set #status = :newStatus",
         ConditionExpression: "#status = :pendingStatus",
@@ -226,12 +227,12 @@ async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
             "#status": "Status"
         },
         ExpressionAttributeValues: {
-            ":newStatus": { S: newStatus },
-            ":pendingStatus": { S: "Pending" }
+            ":newStatus": newStatus, // The new status you're updating to
+            ":pendingStatus": "Pending" // The condition to check before updating
         },
         ReturnValues: "UPDATED_NEW"
     });
-    
+
     try {
         const data = await documentClient.send(command);
         console.log("Successfully updated refund request status:", data);
@@ -242,6 +243,7 @@ async function updateRefundRequestStatus(accountId, requestNumber, newStatus) {
         throw err;
     }
 }
+
 
 // Check Login Credentials
 async function login(username, password) {

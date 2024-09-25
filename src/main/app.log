@@ -997,3 +997,11 @@
 2024-09-25T15:38:50.362Z [info]: Server is listening on port: 3000
 2024-09-25T15:38:53.312Z [info]: Incoming POST : /auth
 2024-09-25T15:39:13.082Z [info]: Incoming GET : /refundRequests/Pending
+2024-09-25T15:49:08.574Z [info]: Server is listening on port: 3000
+2024-09-25T15:49:11.742Z [info]: Incoming POST : /auth
+2024-09-25T15:57:09.387Z [info]: Incoming PUT : /refundRequests/updateStatus
+2024-09-25T15:57:09.561Z [error]: Error updating refund request status: The provided key element does not match the schema
+2024-09-25T15:57:09.580Z [error]: Error updating refund request status: Internal Server Error
+2024-09-25T16:00:22.654Z [info]: Server is listening on port: 3000
+2024-09-25T16:00:26.239Z [info]: Incoming POST : /auth
+2024-09-25T16:00:49.841Z [info]: Incoming PUT : /refundRequests/updateStatus
