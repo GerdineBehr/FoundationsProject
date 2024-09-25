@@ -64,14 +64,20 @@ async function postRefundRequest(refundRequest) {
 // Get Refund Requests by AccountID
 async function fetchRefundRequestsByAccountId(accountId) {
     console.log("Fetching refund requests for AccountID:", accountId);
+    console.log("Type of AccountID:", typeof accountId); // Check the type of AccountID
+
+    // Ensure AccountID is explicitly a string
+    accountId = String(accountId);
+    console.log("Ensured AccountID as String:", accountId);
 
     const command = new QueryCommand({
         TableName,
         KeyConditionExpression: "AccountID = :accountId",
         ExpressionAttributeValues: {
-            ":accountId": { S: accountId }
+            ":accountId": accountId // Use the string-converted AccountID
         }
     });
+
     try {
         const data = await documentClient.send(command);
         console.log("Raw query result:", JSON.stringify(data, null, 2));
@@ -87,6 +93,11 @@ async function fetchRefundRequestsByAccountId(accountId) {
         throw err;
     }
 }
+
+
+
+
+
 
 // Get all pending refund requests
 async function fetchPendingRefundRequests() {
