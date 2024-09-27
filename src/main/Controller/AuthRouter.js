@@ -5,9 +5,7 @@ const logger = require('../util/logger');
 
 // POST Login Route
 router.post("/", async (req, res) => {
-    // Log the incoming request body
     console.log("Received Request Body:", req.body);
-
     const { Username, Password } = req.body;
 
     if (!Username || !Password) {

@@ -1014,3 +1014,38 @@
 2024-09-25T17:10:41.220Z [info]: Server is listening on port: 3000
 2024-09-25T17:10:53.604Z [info]: Incoming POST : /accounts
 2024-09-25T17:12:03.301Z [info]: Incoming POST : /accounts
+2024-09-27T12:39:43.015Z [info]: Server is listening on port: 3000
+2024-09-27T12:40:56.552Z [info]: Incoming POST : /accounts
+2024-09-27T12:41:54.052Z [info]: Incoming PUT : /refundRequests/updateStatus
+2024-09-27T12:47:00.081Z [info]: Incoming POST : /auth
+2024-09-27T12:52:26.559Z [info]: Incoming POST : /auth
+2024-09-27T12:53:08.504Z [info]: Incoming POST : /auth
+2024-09-27T12:53:39.354Z [info]: Incoming POST : /auth
+2024-09-27T12:55:28.994Z [info]: Server is listening on port: 3000
+2024-09-27T12:55:51.975Z [info]: Incoming POST : /accounts
+2024-09-27T12:56:01.959Z [info]: Incoming POST : /auth
+2024-09-27T12:58:19.188Z [info]: Incoming POST : /auth
+2024-09-27T13:04:03.440Z [info]: Server is listening on port: 3000
+2024-09-27T13:04:22.615Z [info]: Incoming POST : /accounts
+2024-09-27T13:04:34.715Z [info]: Incoming POST : /accounts
+2024-09-27T13:05:49.192Z [info]: Server is listening on port: 3000
+2024-09-27T13:06:09.603Z [info]: Incoming POST : /accounts
+2024-09-27T13:06:21.233Z [info]: Incoming POST : /auth
+2024-09-27T13:08:06.431Z [info]: Incoming POST : /refundRequests?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIxIiwicm9sZSI6IkVtcGxveWVlIiwiaWF0IjoxNzI3NDQyMzgxLCJleHAiOjE3Mjc0NDU5ODF9.qM6emkmEbohsPW_XYEIf4JVryXRt25tfBqkk_GNHt8A
+2024-09-27T13:09:34.752Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-27T13:10:25.018Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-27T13:15:35.496Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-27T13:15:35.524Z [info]: Fetching refund requests for AccountID: 1 and Status: Pending
+2024-09-27T13:15:35.529Z [info]: Generated QueryCommand for fetchRefundRequestsByAccountIdAndStatus:
+2024-09-27T13:15:35.821Z [info]: Raw query result by AccountID and Status:
+2024-09-27T13:19:02.671Z [info]: Incoming POST : /auth
+2024-09-27T13:19:20.143Z [info]: Incoming POST : /auth
+2024-09-27T13:20:10.344Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T13:20:30.395Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T13:20:57.263Z [info]: Server is listening on port: 3000
+2024-09-27T13:21:04.723Z [info]: Incoming POST : /auth
+2024-09-27T13:21:20.655Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T13:23:41.207Z [info]: Incoming PUT : /refundRequests/updateStatus
+2024-09-27T13:25:23.411Z [info]: Incoming POST : /auth
+2024-09-27T13:26:06.005Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-27T13:51:47.635Z [info]: Incoming POST : /accounts

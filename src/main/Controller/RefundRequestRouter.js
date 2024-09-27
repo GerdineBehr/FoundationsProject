@@ -1,29 +1,25 @@
 // RefundRequestRouter.js
-
 const express = require("express");
 const router = express.Router();
-const refundRequestService = require("../Service/RequestService");
-const { 
-    updateRefundRequestStatus, 
-    getRefundRequestsByAccountId, 
-    getPendingRefundRequests, 
-    getRefundRequestsByAccountIdAndStatus, 
-    getRefundRequestsByAccountIdExcludingStatus 
-} = refundRequestService; // Use destructuring from the imported service object
-
+const {
+    postRefundRequest,
+    getRefundRequestsByAccountId,
+    getPendingRefundRequests,
+    getRefundRequestsByAccountIdAndStatus,
+    getRefundRequestsByAccountIdExcludingStatus,
+    updateRefundRequestStatus
+} = require("../Service/RequestService");
 const logger = require('../util/logger');
 const { authenticateJWT, checkRole } = require("../Middleware/authMiddleware");
-
-
 
 // POST Create new Refund Request (Employee role required)
 router.post("/", authenticateJWT, checkRole("Employee"), async (req, res) => {
     try {
-        const data = await refundRequestService.postRefundRequest(req.body);
+        const data = await postRefundRequest(req.body);
         console.log("Data returned from database:", data);
         if (data) {
-            res.status(201).json({ message: "Created Refund Request" });
-        } else { 
+            res.status(201).json({ message: "Created Refund Request", data });
+        } else {
             res.status(400).json({ message: "Refund Request not created", receivedData: req.body });
         }
     } catch (err) {

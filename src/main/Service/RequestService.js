@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const uuid = require("uuid");
 require('dotenv').config();
 
-
 async function login(username, password) {
     if (!username || !password) {
         throw new Error("Username and Password are required");
@@ -17,7 +16,7 @@ async function login(username, password) {
             const token = jwt.sign(
                 { username: username, role: role },
                 process.env.JWT_SECRET,
-                { expiresIn: '1h' } // Token expires in 1 hour
+                { expiresIn: '1h' }
             );
             return { message: "Login successful", token: token };
         } else {
@@ -29,15 +28,12 @@ async function login(username, password) {
     }
 }
 
- 
-
-
 async function postRefundRequest(refundRequest) {
     if (validateRefundRequest(refundRequest)) {
         try {
             let data = await refundRequestDao.postRefundRequest({
-                ...refundRequest, 
-                RequestNumber: uuid.v4(), 
+                ...refundRequest,
+                RequestNumber: uuid.v4(),
                 Status: "Pending"
             });
             return data;
@@ -67,28 +63,17 @@ async function getRefundRequestsByAccountId(accountId) {
 }
 
 async function getPendingRefundRequests() {
-    console.log("Fetching all pending refund requests...");
-
     try {
         const data = await refundRequestDao.fetchPendingRefundRequests();
-
-        console.log("Raw data fetched from the database:", JSON.stringify(data, null, 2));
-
         if (!data || data.length === 0) {
-            console.log("No pending refund requests found.");
-            return []; // Return an empty array if no data is found
+            return [];
         }
-
-        console.log("Fetched pending refund requests:", JSON.stringify(data, null, 2));
         return data;
     } catch (err) {
         console.error("Error retrieving pending refund requests:", err.message);
         throw new Error("Error fetching pending refund requests from the database");
     }
 }
-
-
-
 
 async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
     try {
