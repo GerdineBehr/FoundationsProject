@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const uuid = require("uuid");
 require('dotenv').config();
 
+
 async function login(username, password) {
     if (!username || !password) {
         throw new Error("Username and Password are required");
