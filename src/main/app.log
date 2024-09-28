@@ -1049,3 +1049,33 @@
 2024-09-27T13:25:23.411Z [info]: Incoming POST : /auth
 2024-09-27T13:26:06.005Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
 2024-09-27T13:51:47.635Z [info]: Incoming POST : /accounts
+2024-09-27T15:02:39.766Z [info]: Server is listening on port: 3000
+2024-09-27T15:02:54.769Z [info]: Incoming POST : /auth
+2024-09-27T15:03:50.096Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-27T15:04:12.729Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1
+2024-09-27T15:04:12.900Z [error]: Error fetching refund requests by AccountID excluding Status: Invalid FilterExpression: An expression attribute value used in expression is not defined; attribute value: :status
+2024-09-27T15:04:12.944Z [error]: Error retrieving refund requests by excluding status: Error: Internal Server Error
+2024-09-27T15:37:51.479Z [info]: Server is listening on port: 3000
+2024-09-27T15:37:56.075Z [info]: Incoming POST : /accounts
+2024-09-27T15:38:00.301Z [info]: Incoming POST : /accounts
+2024-09-27T15:47:39.145Z [info]: Server is listening on port: 3000
+2024-09-27T15:47:44.071Z [info]: Incoming POST : /accounts
+2024-09-27T15:47:57.122Z [info]: Incoming POST : /accounts
+2024-09-27T15:48:22.903Z [info]: Incoming POST : /auth
+2024-09-27T15:49:23.899Z [info]: Incoming POST : /refundRequests?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIxIiwicm9sZSI6IkVtcGxveWVlIiwiaWF0IjoxNzI3NDUyMTAzLCJleHAiOjE3Mjc0NTU3MDN9.VhGsKbRtUwJ9KKs0TqaxP21IKQU7Wt4qvI1bTS7APBE
+2024-09-27T15:49:42.376Z [info]: Incoming POST : /refundRequests?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIxIiwicm9sZSI6IkVtcGxveWVlIiwiaWF0IjoxNzI3NDUyMTAzLCJleHAiOjE3Mjc0NTU3MDN9.VhGsKbRtUwJ9KKs0TqaxP21IKQU7Wt4qvI1bTS7APBE
+2024-09-27T15:50:30.809Z [info]: Incoming GET : /refundRequests/exclude-status?AccountID=1&Status=Pending
+2024-09-27T15:51:05.953Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-27T15:51:26.102Z [info]: Incoming GET : /refundRequests/status?AccountID=1&Status=Pending
+2024-09-27T15:51:26.107Z [info]: Fetching refund requests for AccountID: 1 and Status: Pending
+2024-09-27T15:51:26.110Z [info]: Generated QueryCommand for fetchRefundRequestsByAccountIdAndStatus:
+2024-09-27T15:51:26.155Z [info]: Raw query result by AccountID and Status:
+2024-09-27T15:52:36.366Z [info]: Incoming POST : /auth
+2024-09-27T15:53:10.276Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T15:53:45.556Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T15:54:11.595Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T15:55:44.365Z [info]: Incoming PUT : /refundRequests/updateStatus
+2024-09-27T15:56:10.743Z [info]: Incoming PUT : /refundRequests/updateStatus
+2024-09-27T15:56:40.186Z [info]: Incoming GET : /refundRequests/Pending?Authorization=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFwcHJvdmVyIiwicm9sZSI6Ik1hbmFnZXIiLCJpYXQiOjE3Mjc0NDMxNjAsImV4cCI6MTcyNzQ0Njc2MH0.UTZJ9CsCc8JUCyGC5QQPtRiFLGxgyTYvpCTn1-Ms0xQ
+2024-09-27T15:58:30.668Z [info]: Incoming POST : /accounts
+2024-09-27T15:58:49.369Z [info]: Incoming POST : /accounts

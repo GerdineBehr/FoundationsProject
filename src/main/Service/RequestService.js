@@ -6,7 +6,7 @@ require('dotenv').config();
 
 async function login(username, password) {
     if (!username || !password) {
-        throw new Error("Username and Password are required");
+        throw new Error("Come on YOU KNOW THIS, Username and Password are required");
     }
 
     try {
@@ -18,7 +18,7 @@ async function login(username, password) {
                 process.env.JWT_SECRET,
                 { expiresIn: '1h' }
             );
-            return { message: "Login successful", token: token };
+            return { message: "AND WE ARE BACK! Login successful", token: token };
         } else {
             return { message: "Invalid credentials" };
         }
@@ -53,7 +53,7 @@ async function getRefundRequestsByAccountId(accountId) {
     try {
         const data = await refundRequestDao.fetchRefundRequestsByAccountId(accountId);
         if (!data || data.length === 0) {
-            throw new Error("No refund requests found for this account");
+            throw new Error("You again? No refund requests found for this account");
         }
         return data;
     } catch (err) {
@@ -79,7 +79,7 @@ async function getRefundRequestsByAccountIdAndStatus(accountId, status) {
     try {
         const data = await refundRequestDao.fetchRefundRequestsByAccountIdAndStatus(accountId, status);
         if (!data || data.length === 0) {
-            throw new Error(`No refund requests with status "${status}" found for this account`);
+            throw new Error(`No Money for you. No refund requests with status "${status}" found for this account`);
         }
         return data;
     } catch (err) {
@@ -92,7 +92,7 @@ async function getRefundRequestsByAccountIdExcludingStatus(accountId, status) {
     try {
         const data = await refundRequestDao.fetchRefundRequestsByAccountIdExcludingStatus(accountId, status);
         if (!data || data.length === 0) {
-            throw new Error(`No refund requests excluding status "${status}" found for this account`);
+            throw new Error(`This is embarrassing for you. No refund requests excluding status "${status}" found for this account`);
         }
         return data;
     } catch (err) {
