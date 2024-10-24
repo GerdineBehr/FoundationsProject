@@ -1,118 +1,145 @@
 // __tests__/RequestService.test.js
 
 // 1. Set environment variable before any mocks and imports
-process.env.JWT_SECRET = 'test_secret';
+process.env.JWT_SECRET = "test_secret";
 
 // 2. Mock dependencies before importing the modules under test
-jest.mock('../src/main/DAO/RequestDAO');
+jest.mock("../src/main/DAO/RequestDAO");
 
-const refundRequestDao = require('../src/main/DAO/RequestDAO');
-const jwt = require('jsonwebtoken');
-const uuid = require('uuid');
+const refundRequestDao = require("../src/main/DAO/RequestDAO");
 const {
-    login,
-    postRefundRequest,
-} = require('../src/main/Service/RequestService');
+  getRefundRequestsByAccountId,
+  getPendingRefundRequests,
+  updateRefundRequestStatus,
+} = require("../src/main/Service/RequestService");
 
 // 3. Clear mocks before each test to ensure test isolation
 beforeEach(() => {
-    jest.clearAllMocks();
+  jest.clearAllMocks();
 });
 
-describe('RequestService - login function', () => {
-    test('should return a token if credentials are valid', async () => {
-        // Arrange
-        refundRequestDao.login.mockResolvedValue(true);
-        refundRequestDao.fetchUserRole.mockResolvedValue("Employee");
+describe("RequestService - getRefundRequestsByAccountId function", () => {
+  test("should return refund requests for a valid account ID", async () => {
+    // Arrange
+    const mockRequests = [{ RequestNumber: "123", Status: "Pending" }];
+    refundRequestDao.fetchRefundRequestsByAccountId.mockResolvedValue(
+      mockRequests
+    );
 
-        // Act
-        const result = await login("testuser", "testpass");
+    // Act
+    const result = await getRefundRequestsByAccountId("valid-account-id");
 
-        // Assert
-        expect(refundRequestDao.login).toHaveBeenCalledWith("testuser", "testpass");
-        expect(refundRequestDao.fetchUserRole).toHaveBeenCalledWith("testuser");
-        expect(result).toHaveProperty('message', 'Login successful');
-        expect(result).toHaveProperty('token');
-        expect(typeof result.token).toBe('string');
+    // Assert
+    expect(
+      refundRequestDao.fetchRefundRequestsByAccountId
+    ).toHaveBeenCalledWith("valid-account-id");
+    expect(result).toEqual(mockRequests);
+  });
 
-        // Verify the token's payload
-        const decoded = jwt.verify(result.token, process.env.JWT_SECRET);
-        expect(decoded).toMatchObject({ username: "testuser", role: "Employee" });
-    });
+  test("should throw an error if no refund requests are found", async () => {
+    // Arrange
+    refundRequestDao.fetchRefundRequestsByAccountId.mockResolvedValue([]);
 
-    test('should throw an error if username or password is missing', async () => {
-        await expect(login(null, "testpass")).rejects.toThrow("Username and Password are required");
-        await expect(login("testuser", null)).rejects.toThrow("Username and Password are required");
-    });
+    // Act & Assert
+    await expect(
+      getRefundRequestsByAccountId("invalid-account-id")
+    ).rejects.toThrow("You again? No refund requests found for this account");
+  });
 
-    test('should return "Invalid credentials" if login fails', async () => {
-        // Arrange
-        refundRequestDao.login.mockResolvedValue(false);
+  test('should throw "Internal Server Error" if DAO throws an error', async () => {
+    // Arrange
+    refundRequestDao.fetchRefundRequestsByAccountId.mockRejectedValue(
+      new Error("DB Error")
+    );
 
-        // Act
-        const result = await login("testuser", "wrongpass");
-
-        // Assert
-        expect(result).toEqual({ message: "Invalid credentials" });
-    });
-
-    test('should throw "Internal Server Error" if DAO throws an error', async () => {
-        // Arrange
-        refundRequestDao.login.mockRejectedValue(new Error("DB Error"));
-
-        // Act & Assert
-        await expect(login("testuser", "testpass")).rejects.toThrow("Internal Server Error");
-    });
+    // Act & Assert
+    await expect(
+      getRefundRequestsByAccountId("error-account-id")
+    ).rejects.toThrow("DB Error");
+  });
 });
 
-describe('RequestService - postRefundRequest function', () => {
-    test('should successfully post a refund request', async () => {
-        // Arrange
-        const mockRequest = { AccountID: "123", Amount: 100 };
+describe("RequestService - getPendingRefundRequests function", () => {
+  test("should return pending refund requests", async () => {
+    // Arrange
+    const mockRequests = [{ RequestNumber: "123", Status: "Pending" }];
+    refundRequestDao.fetchPendingRefundRequests.mockResolvedValue(mockRequests);
 
-        // Mock the DAO to return the refund request with a generated UUID and Status
-        refundRequestDao.postRefundRequest.mockImplementation(async (refundRequest) => {
-            return {
-                ...refundRequest,
-                RequestNumber: refundRequest.RequestNumber,
-                Status: "Pending"
-            };
-        });
+    // Act
+    const result = await getPendingRefundRequests();
 
-        // Act
-        const result = await postRefundRequest(mockRequest);
+    // Assert
+    expect(refundRequestDao.fetchPendingRefundRequests).toHaveBeenCalled();
+    expect(result).toEqual(mockRequests);
+  });
 
-        // Assert
-        expect(refundRequestDao.postRefundRequest).toHaveBeenCalled();
+  test("should return an empty array if no pending refund requests are found", async () => {
+    // Arrange
+    refundRequestDao.fetchPendingRefundRequests.mockResolvedValue([]);
 
-        const calledWith = refundRequestDao.postRefundRequest.mock.calls[0][0];
-        expect(calledWith.AccountID).toBe(mockRequest.AccountID);
-        expect(calledWith.Amount).toBe(mockRequest.Amount);
-        expect(calledWith).toHaveProperty('RequestNumber');
-        expect(calledWith).toHaveProperty('Status', 'Pending');
+    // Act
+    const result = await getPendingRefundRequests();
 
-        // Validate that RequestNumber is a valid UUID
-        const isValidUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(calledWith.RequestNumber);
-        expect(isValidUUID).toBe(true);
+    // Assert
+    expect(result).toEqual([]);
+  });
 
-        // Validate the result
-        expect(result).toEqual({
-            ...mockRequest,
-            RequestNumber: calledWith.RequestNumber,
-            Status: "Pending"
-        });
-    });
+  test('should throw "Internal Server Error" if DAO throws an error', async () => {
+    // Arrange
+    refundRequestDao.fetchPendingRefundRequests.mockRejectedValue(
+      new Error("DB Error")
+    );
 
-    test('should throw an error if the refund request is invalid', async () => {
-        await expect(postRefundRequest({ AccountID: "123" })).rejects.toThrow("Invalid refund request data");
-        await expect(postRefundRequest({ Amount: 100 })).rejects.toThrow("Invalid refund request data");
-    });
+    // Act & Assert
+    await expect(getPendingRefundRequests()).rejects.toThrow(
+      "Error fetching pending refund requests from the database"
+    );
+  });
+});
 
-    test('should throw "Internal Server Error" if DAO throws an error', async () => {
-        // Arrange
-        refundRequestDao.postRefundRequest.mockRejectedValue(new Error("DB Error"));
+describe("RequestService - updateRefundRequestStatus function", () => {
+  test("should update refund request status", async () => {
+    // Arrange
+    const mockUpdatedRequest = { RequestNumber: "123", Status: "Approved" };
+    refundRequestDao.updateRefundRequestStatus.mockResolvedValue(
+      mockUpdatedRequest
+    );
 
-        // Act & Assert
-        await expect(postRefundRequest({ AccountID: "123", Amount: 100 })).rejects.toThrow("Internal Server Error");
-    });
+    // Act
+    const result = await updateRefundRequestStatus(
+      "valid-account-id",
+      "123",
+      "Approved"
+    );
+
+    // Assert
+    expect(refundRequestDao.updateRefundRequestStatus).toHaveBeenCalledWith(
+      "valid-account-id",
+      "123",
+      "Approved"
+    );
+    expect(result).toEqual(mockUpdatedRequest);
+  });
+
+  test("should throw an error if no pending refund request is found", async () => {
+    // Arrange
+    refundRequestDao.updateRefundRequestStatus.mockResolvedValue(null);
+
+    // Act & Assert
+    await expect(
+      updateRefundRequestStatus("valid-account-id", "123", "Approved")
+    ).rejects.toThrow("Internal Server Error");
+  });
+
+  test('should throw "Internal Server Error" if DAO throws an error', async () => {
+    // Arrange
+    refundRequestDao.updateRefundRequestStatus.mockRejectedValue(
+      new Error("DB Error")
+    );
+
+    // Act & Assert
+    await expect(
+      updateRefundRequestStatus("valid-account-id", "123", "Approved")
+    ).rejects.toThrow("Internal Server Error");
+  });
 });
